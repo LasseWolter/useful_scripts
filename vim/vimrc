@@ -13,20 +13,24 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
-Plug 'scrooloose/nerdtree'  " file list
+Plug 'scrooloose/nerdtree'                      " file list
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  "to highlight files in nerdtree
-Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
+Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'} " fuzzy searching
 Plug 'junegunn/fzf.vim'
-Plug 'davidhalter/jedi-vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'w0rp/ale'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " expandable autocompletion and linting
+Plug 'mattn/emmet-vim'                          " provides support for expanding abbreviations
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
 " path to your python
 let g:python3_host_prog = '/usr/bin/python3'
 let g:python_host_prog = '/usr/bin/python2'
+
+" General settings to work productively -> https://vi.stackexchange.com/questions/9672/how-to-generate-closing-tags-for-html
+set backspace=indent,eol,start
+set hidden
+filetype plugin indent on
+syntax on
 
 ">>>>>>>>>>>>>>>COC SETTINGS----------------------
 " if hidden is not set, TextEdit might fail.
@@ -224,36 +228,6 @@ let g:javascript_plugin_flow = 1
 
 " Add fzf as vim-plugin
 set rtp+=~/.fzf
-
-" Add configurations for Ale Plugin
-" Move between errors
-nmap <silent> <C-k> :ALEPrevious -error<cr> 
-nmap <silent> <C-j> :ALENext -error<cr>
-nmap <silent> <F7> :ALEToggle<cr>
-
-" Only lint when leaving insert mode - not constantly when typing
-let g:ale_lint_delay = 20 
-let g:ale_lint_on_insert_leave = 1 
-let g:ale_fix_on_save = 0
-" Cache checks - means you need to restart vim when adding new linter
-let g:ale_cache_executable_check_failures=1
-
-let g:ale_sign_error = '!!'
-let g:ale_sign_warning = '.'
-
-let g:ale_python_pylint_options = '-j 0 --max-line-length=120'
-let g:ale_linters = {}
-let g:ale_fixers = {}
-" Check Python files with flake8 - don't us pylint because it only works on
-" saving the file - flake8 works in real time.
-let g:ale_linters['python'] = ['flake8']
-" Fix Python files with autopep8 and yapf.
-let g:ale_fixers['python'] = ['autopep8', 'yapf']
-" Disable warnings about trailing whitespace for Python files.
-let g:ale_warn_about_trailing_whitespace = 0
-
-let g:ale_fixers['javascript'] = ['eslint']
-nmap <C-L> <Plug>(ale_fix)
 
 " to be able to paste without messing up the formatting
 set pastetoggle=<F3>
