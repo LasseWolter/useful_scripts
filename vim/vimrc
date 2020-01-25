@@ -14,12 +14,15 @@ call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
 Plug 'scrooloose/nerdtree'                      " file list
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  "to highlight files in nerdtree
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " highlight files in nerdtree by their extension
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'} " fuzzy searching
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/seoul256.vim'                    " seoul256 colourschemes
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " expandable autocompletion and linting
 Plug 'mattn/emmet-vim'                          " provides support for expanding abbreviations
+Plug 'glench/vim-jinja2-syntax'
+" devicons should always be loaded last 
+Plug 'ryanoasis/vim-devicons'                   " Adds file type icons to vim plugins like Nerdtree
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -35,6 +38,9 @@ syntax on
 
 " Turn on mouse for all modes
 set mouse=a
+
+"Make vim-jinja work with more file-extensions 
+"au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
 
 ">>>>>>>>>>>>>>>COC SETTINGS----------------------
 " if hidden is not set, TextEdit might fail.
@@ -56,14 +62,14 @@ set shortmess+=c
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+let col = col('.') - 1
+return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " Use <c-space> to trigger completion.
@@ -89,11 +95,11 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
+if (index(['vim','help'], &filetype) >= 0)
+execute 'h '.expand('<cword>')
+else
+call CocAction('doHover')
+endif
 endfunction
 
 " Highlight symbol under cursor on CursorHold
@@ -107,11 +113,11 @@ xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+autocmd!
+" Setup formatexpr specified filetype(s).
+autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+" Update signature help on jump placeholder
+autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
@@ -129,9 +135,9 @@ xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
-" Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <C-d> <Plug>(coc-range-select)
-xmap <silent> <C-d> <Plug>(coc-range-select)
+" Use <C-p> for select selections ranges, needs server support, like: coc-tsserver, coc-python
+nmap <silent> <C-p> <Plug>(coc-range-select)
+xmap <silent> <C-p> <Plug>(coc-range-select)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
@@ -164,11 +170,16 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " cSpell extension settings
-vmap <leader>a <Plug>(coc-codeaction-selected)
-nmap <leader>a <Plug>(coc-codeaction-selected)
+"vmap <leader>a <Plug>(coc-codeaction-selected)
+"nmap <leader>a <Plug>(coc-codeaction-selected)
 
+"coc-python: autopep8 format shortcut
+noremap <silent> <F2> :call CocAction('format')<CR>
 "Toggle spell checker
-noremap <F6> :call CocAction('runCommand', 'cSpell.toggleEnableSpellChecker')<CR>
+noremap <silent> <F6> :call CocAction('runCommand', 'cSpell.toggleEnableSpellChecker')<CR>
+
+" To make the vim-jinja2-syntax plugin work together with coc-html/emmet
+let g:coc_filetype_map={'jinja.html':'html'}
 "<<<<<<<<<<<<<<END COC SETTINGS----------------------
 
 
@@ -230,9 +241,18 @@ nnoremap tl :tablast <CR>
 
 colorscheme spacegray
 
+">>>>>>>>>>>>>>>Nerd tree settings----------------------
 " toggle nerdtree on ctrl+n
 map <C-n> :NERDTreeToggle <CR>
 map <C-t> :set nosplitright <CR>:TagbarToggle<CR>:set splitright<CR>
+let NERDTreeQuitOnOpen = 1  " close nerdtree on opening a file
+" Make Nerdtree UI prettier
+let NERDTreeMinimalUI = 1  " hide 'help ?' and 'up a dir'
+
+"NerdTreeHighlight settings 
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
 
 " Pangloss java script plugin
 let g:javascript_plugin_flow = 1
