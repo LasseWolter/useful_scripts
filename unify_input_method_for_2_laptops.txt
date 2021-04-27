@@ -1,0 +1,10 @@
+Control both computers with one mouse and one keyboard.
+1) Install x2vnc on the main computer
+2) Install x11vnc on the secondary computer
+3) On the secondary computer run: x11vnc -forever
+4) On the main computer run x2vnc -west/east/north/south <ip>:5900
+    -> where <ip> is the ip of the secondary computer (e.g. 192.168.1.10) and the direction can be
+    chosen to suit the setup
+
+!! This connection won't be encrypted !!
+    -> for that additional options have to be set
