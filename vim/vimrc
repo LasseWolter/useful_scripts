@@ -17,6 +17,7 @@ Plug 'scrooloose/nerdtree'                      " file list
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " highlight files in nerdtree by their extension
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'} " fuzzy searching
 Plug 'junegunn/fzf.vim'
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}  " live markdown preview
 Plug 'junegunn/seoul256.vim'                    " seoul256 colourschemes
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " expandable autocompletion and linting
 Plug 'mattn/emmet-vim'                          " provides support for expanding abbreviations
@@ -170,11 +171,19 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " cSpell extension settings
-"vmap <leader>a <Plug>(coc-codeaction-selected)
-"nmap <leader>a <Plug>(coc-codeaction-selected)
+" Remap for do codeAction of selected region
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
+" NOTE: CocActions only works with neovim versions >= v0.4.0 
+xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+" Use C-s to open the cocActions menu - cSpell spelling suggestions
+noremap <C-s> :CocCommand actions.open <CR>
 
-"coc-python: autopep8 format shortcut
-noremap <silent> <F2> :call CocAction('format')<CR>
+"
+"format shortcut
+noremap <silent> <F4> :call CocAction('format')<CR>
 "Toggle spell checker
 noremap <silent> <F6> :call CocAction('runCommand', 'cSpell.toggleEnableSpellChecker')<CR>
 
@@ -184,8 +193,19 @@ let g:coc_filetype_map={'jinja.html':'html'}
 
 
 " Remappings
-:imap jj <Esc>
-:nnoremap <esc> :noh<return><esc>
+imap jj <Esc>
+nnoremap <esc> :noh<return><esc>
+nmap <leader>v :source $MYVIMRC
+
+
+" to be able to paste without messing up the formatting
+set pastetoggle=<F3>
+" Paste formatted with <C-v> in insert mode
+imap <C-v> <F3><C-r>+<F3>
+
+" Copy with <C-c> in normal and visual mode
+nmap <C-c> "+y
+vmap <C-c> "+y
 
 " From Vim config website
 set number      " Show line numbers
@@ -245,9 +265,11 @@ colorscheme spacegray
 " toggle nerdtree on ctrl+n
 map <C-n> :NERDTreeToggle <CR>
 map <C-t> :set nosplitright <CR>:TagbarToggle<CR>:set splitright<CR>
+let NERDTreeShowHidden=1    " show hidden files (dot files)
 let NERDTreeQuitOnOpen = 1  " close nerdtree on opening a file
 " Make Nerdtree UI prettier
 let NERDTreeMinimalUI = 1  " hide 'help ?' and 'up a dir'
+
 
 "NerdTreeHighlight settings 
 let g:NERDTreeFileExtensionHighlightFullName = 1
@@ -260,9 +282,9 @@ let g:javascript_plugin_flow = 1
 " Add fzf as vim-plugin
 set rtp+=~/.fzf
 
-" to be able to paste without messing up the formatting
-set pastetoggle=<F3>
 
 " Disable flash on error
 set t_vb =
 
+" GUI settings
+set guifont=monospace:h12
