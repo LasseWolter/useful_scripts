@@ -24,6 +24,8 @@ Plug 'mattn/emmet-vim'                          " provides support for expanding
 Plug 'glench/vim-jinja2-syntax'
 " devicons should always be loaded last 
 Plug 'ryanoasis/vim-devicons'                   " Adds file type icons to vim plugins like Nerdtree
+Plug 'tpope/vim-surround'                       " Adds souround operator 's' to vim
+Plug 'justinmk/vim-sneak'                       " Adds sneaky two char find vim motion/operation
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
