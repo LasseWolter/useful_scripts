@@ -24,7 +24,7 @@ Plug 'mattn/emmet-vim'                          " provides support for expanding
 Plug 'glench/vim-jinja2-syntax'
 " devicons should always be loaded last 
 Plug 'ryanoasis/vim-devicons'                   " Adds file type icons to vim plugins like Nerdtree
-Plug 'tpope/vim-surround'                       " Adds souround operator 's' to vim
+Plug 'tpope/vim-surround'                       " Adds souround operator 's' to vim  
 Plug 'justinmk/vim-sneak'                       " Adds sneaky two char find vim motion/operation
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -124,6 +124,7 @@ autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+" e.g. used for coc-spell-checker
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 
@@ -172,18 +173,6 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-" cSpell extension settings
-" Remap for do codeAction of selected region
-function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
-endfunction
-" NOTE: CocActions only works with neovim versions >= v0.4.0 
-xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
-" Use C-s to open the cocActions menu - cSpell spelling suggestions
-noremap <C-s> :CocCommand actions.open <CR>
-
-"
 "format shortcut
 noremap <silent> <F4> :call CocAction('format')<CR>
 "Toggle spell checker
