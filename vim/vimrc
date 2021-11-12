@@ -284,6 +284,10 @@ set guifont=monospace:h12
 " By default, no TeX code embedded within markdown would be rendered. This option uses MathJax and launches the node server as instant-markdown-d --mathjax.
 let g:instant_markdown_mathjax = 1
 
+" Don't open markdown automatically but only when <F5> is pressed
+let g:instant_markdown_autostart = 0
+nmap <F5> :InstantMarkdownPreview <CR>
+
 " To allow for cycling through UPPPER,lower and Title case 
 " taken from https://vim.fandom.com/wiki/Switching_case_of_characters#Twiddle_case
 function! TwiddleCase(str)

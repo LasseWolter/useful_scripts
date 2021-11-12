@@ -3,6 +3,7 @@
 set -o nounset    # error when referencing undefined variable
 set -o errexit    # exit when command fails
 
+# Coc-nvim needs a node version >= 12.12 (date: 23/10/21)
 # Install latest nodejs
 if [ ! -x "$(command -v node)" ]; then
     curl --fail -LSs https://install-node.now.sh/latest | sudo bash
@@ -30,5 +31,4 @@ then
   echo '{"dependencies":{}}'> package.json
 fi
 # Change extension names to the extensions you need
-npm install coc-spell-checker coc-emmet coc-snippets coc-json coc-lists coc-tsserver coc-python coc-html coc-css instant-markdown-d --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
-
+npm install coc-spell-checker coc-emmet coc-snippets coc-json coc-lists coc-tsserver coc-pyright coc-html coc-css coc-prettier --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
