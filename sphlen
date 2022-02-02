@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Requires soxi and sph2pipe (https://github.com/burrmill/sph2pipe)
+# Return the length of an .sph audio file in seconds
+
+sph2pipe $1 >isafodjfoifaj.wav && soxi -D isafodjfoifaj.wav && rm isafodjfoifaj.wav
