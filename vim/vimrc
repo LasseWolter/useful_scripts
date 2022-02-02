@@ -25,6 +25,7 @@ Plug 'glench/vim-jinja2-syntax'                 " devicons should always be load
 Plug 'ryanoasis/vim-devicons'                   " Adds file type icons to vim plugins like Nerdtree
 Plug 'tpope/vim-surround'                       " Adds souround operator 's' to vim  
 Plug 'justinmk/vim-sneak'                       " Adds sneaky two char find vim motion/operation
+Plug 'preservim/nerdcommenter'                  " Adds (un)comment functionality in vim style
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
