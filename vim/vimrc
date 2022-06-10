@@ -195,8 +195,8 @@ set pastetoggle=<F3>
 imap <C-v> <F3><C-r>+<F3>
 
 " Copy with <C-c> in normal and visual mode
-nmap <C-c> "+y
 vmap <C-c> "+y
+nmap <C-c> "+y
 
 " From Vim config website
 set number      " Show line numbers
@@ -305,3 +305,7 @@ vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgv
 
 " Easily substitute all instances of word under cursor
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+
+" comment out using vscode binding
+nmap <C-_> <Plug>NERDCommenterToggle
+vmap <C-_> <Plug>NERDCommenterToggle
