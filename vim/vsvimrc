@@ -1,0 +1,80 @@
+let mapleader=" "
+
+" Copy with <C-c> in normal and visual mode
+vmap <C-c> "+y
+nmap <C-c> "+y
+
+" Cancel all highlights using escape
+nnoremap <esc> :noh<return><esc>
+
+" From Vim config website
+set number      " Show line numbers
+set textwidth=100       " Line wrap(number of cols)
+set visualbell  " Use visual bell(no beeping)
+
+set hlsearch    " Highlight all search results
+set incsearch
+set smartcase   " Enable smart-case search
+set ignorecase  " Always case-insensitive
+set incsearch   " Searches for strings incrementally
+
+set autoindent  " Auto-indent new lines
+set expandtab   " Use spaces instead of tabs
+set shiftwidth=2        " Number of auto-indent spaces
+set softtabstop=2       " Number of spaces per Tab
+
+" Prevent text from automatically breaking a line
+set textwidth=0
+
+" Advanced
+
+set backspace=indent,eol,start  " Backspace behaviour
+
+set scrolloff=5 " keep three lines between the cursor and the edge of the screen
+
+" easy split movement
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" tabs:
+nnoremap tn :tabnew <Space>
+nnoremap tk :tabnext <CR>
+nnoremap tj :tabprev <CR>
+nnoremap th :tabfirst <CR>
+nnoremap tl :tablast <CR>
+
+"--------------------------------------------------
+" VIM shortcuts to execute VisualStudio commands
+
+nmap <leader>s gS:vsc View.TrackActivityinSOlutionExplorer<CR> gS:vsc View.SolutionExplorer<CR>
+nmap <leader>b gS:vsc Debug.ToggleBreakpoint<CR>
+nmap <leader>d gS:vsc Debug.Start<CR>
+nmap <leader>c gS:vsc Debug.StopDebugging<CR> gS:vsc Debug.Cancel<CR>
+
+"--------------------------------------------------
+" PeasyMotion Settings
+" gS prefix is added for ViEmu, no use for VsVim AFAIK.
+"VsVim and ViEmu are disabled until PeasyMotion finishes
+
+"Whole viewport jump-to-word beginning mode:
+nnoremap f gS:vsc Tools.InvokePeasyMotion<CR>
+
+"Select text from current caret position to desired jump label (fwd and reverse directions supported)
+nmap ;; gS:vsc Tools.InvokePeasyMotionTextSelect<CR>
+
+"Jump to word beginning in current line
+nmap zw gS:vsc Tools.InvokePeasyMotionLineJumpToWordBegining<CR>
+"Jump to word ending in current line
+nmap ze gS:vsc Tools.InvokePeasyMotionLineJumpToWordEnding<CR>
+
+"Jump to any open document tab
+nmap ;w gS:vsc Tools.InvokePeasyMotionJumpToDocumentTab<CR>
+
+"Jump to line beginning:
+nmap ;l gS:vsc Tools.InvokePeasyMotionJumpToLineBegining<CR>
+
+"Two char search mode:
+nmap ;c gS:vsc Tools.InvokePeasyMotionTwoCharJump<CR>
+
