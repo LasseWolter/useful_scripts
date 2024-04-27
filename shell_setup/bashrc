@@ -1,0 +1,8 @@
+# All aliases should be defined in ~/.bash_aliases
+if [ -e $HOME/.bash_aliases ]; then
+	source $HOME/.bash_aliases
+fi
+
+# Update path variable
+export PATH=$PATH:/Users/lassewolter/Library/Android/sdk/platform-tools
+export PATH=$PATH:/Users/lassewolter/.lhotse/tools/sph2pipe-2.5

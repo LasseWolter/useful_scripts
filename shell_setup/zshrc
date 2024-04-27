@@ -1,0 +1,15 @@
+source ~/.bashrc
+
+export PATH="${PATH}:/Library/Java/JavaVirtualMachines/microsoft-21.jdk/Contents/Home"
+export PATH="/Users/lassewolter/.scripts:${PATH}"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/microsoft-21.jdk/Contents/Home"
+
+bindkey -s ^f "tmux-sessionizer\n"
+
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+eval "$(zoxide init --cmd cd zsh)"
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
