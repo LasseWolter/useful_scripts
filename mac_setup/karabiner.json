@@ -1,0 +1,3126 @@
+{
+    "global": {
+        "ask_for_confirmation_before_quitting": true,
+        "check_for_updates_on_startup": true,
+        "show_in_menu_bar": true,
+        "show_profile_name_in_menu_bar": false,
+        "unsafe_ui": false
+    },
+    "profiles": [
+        {
+            "complex_modifications": {
+                "parameters": {
+                    "basic.simultaneous_threshold_milliseconds": 50,
+                    "basic.to_delayed_action_delay_milliseconds": 500,
+                    "basic.to_if_alone_timeout_milliseconds": 1000,
+                    "basic.to_if_held_down_threshold_milliseconds": 500,
+                    "mouse_motion_to_scroll.speed": 100
+                },
+                "rules": [
+                    {
+                        "description": "Ctrl+C, Ctrl+V, Ctrl+X => Cmd+C (Copy), Cmd+V (Paste), Cmd+X (Cut)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$",
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "c",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$",
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty",
+                                            "^com.jetbrains.rider",
+                                            "^com\\.jetbrains\\.pycharm\\.ce"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "v",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$",
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "x",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "x",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl + BS/Del Keys to Option + BS/Del Keys",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "delete_forward",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_forward",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Control+p - arrow up",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Control+n - arrow down",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Shift+End => Cmd+Shift+Right arrow (Move cursor to end of line with selection)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^tv\\.parsec\\.www$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "end",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "command",
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Shift+Home => Cmd+Shift+Left arrow (Move cursor to beginning of line with selection)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^tv\\.parsec\\.www$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "home",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "command",
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "End => Cmd+Right arrow (Move cursor to end of line)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^tv\\.parsec\\.www$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "end"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Home => Cmd+Left arrow (Move cursor to beginning of line)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^tv\\.parsec\\.www$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "home"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl + BS/Del Keys to Option + BS/Del Keys",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "delete_forward",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_forward",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Delete => Cmd+backspace (Delete) (Only in Finder)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com.apple.finder"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "delete_forward",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "(Added for Terminal) Ctrl+Shift+C, Ctrl+Shift+V => Cmd+C (Copy), Cmd+V (Paste)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control",
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "c",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control",
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "v",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "option+e - open Finder (similar to windows+e opene windows explorer)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "n",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Map Rectangular Screenshot (copy to clipboard) to Ctrl+Shift+s",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift",
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "4",
+                                        "modifiers": [
+                                            "control",
+                                            "shift",
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Disable command+q app quitting - remap to left_option-q so you can still use it in Rider for closing all other tabs)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "q",
+                                        "modifiers": [
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "cmd+tab - Switch Window Right",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "tab",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_gui"
+                                        ],
+                                        "repeat": false
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "cmd+shift+tab - Switch Window Left",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "tab",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_gui",
+                                            "left_shift"
+                                        ],
+                                        "repeat": false
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Option + '.' (period) to pop-up the emoji menu (command + control + space)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "spacebar",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Open a terminal window with Ctrl-RAlt-T",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a Terminal ~"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Delete => Cmd+backspace (Delete) (Only in Finder)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com.apple.finder"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "delete_forward",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Open a terminal window with Ctrl-LAlt-T",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "left_option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a Terminal ~"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Open a terminal window with Ctrl-RAlt-T",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control",
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a Terminal ~"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl + Shift + Arrow Keys to Option + Shift + Arrow Keys",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "up_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control",
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": [
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "down_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control",
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow",
+                                        "modifiers": [
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "left_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control",
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "right_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control",
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl+C, Ctrl+V, Ctrl+X => Cmd+C (Copy), Cmd+V (Paste), Cmd+X (Cut)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$",
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "c",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$",
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^com.jetbrains.rider"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "v",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$",
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "x",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "x",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl+Z => Cmd+Z (Undo)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "^de$"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$",
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "y",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "y",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "^de$"
+                                            }
+                                        ],
+                                        "type": "input_source_unless"
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$",
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "z",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "z",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl+Y => Cmd+Shift+Z (Redo)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "^de$"
+                                            }
+                                        ],
+                                        "type": "input_source_if"
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$",
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^com\\.jetbrains\\.rider$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "z",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "y",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "input_sources": [
+                                            {
+                                                "language": "^de$"
+                                            }
+                                        ],
+                                        "type": "input_source_unless"
+                                    },
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$",
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$",
+                                            "^com\\.jetbrains\\.rider$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "y",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "z",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl+A => Cmd+A (Select all)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$",
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "a",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl+S => Cmd+S (Save)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$",
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "s",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl+N => Cmd+N (New)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$",
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "n",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl+F => Cmd+F (Find)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$",
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$",
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "g",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Command+Shift+F4 => Cmd+Q (Close Application)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f4",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "q",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Command+F4 => Cmd+W (Close Window)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f4",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "w",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl+T => Cmd+T (New tab)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^tv\\.parsec\\.www$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "t",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl+B => Cmd+B (Bold)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^tv\\.parsec\\.www$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "b",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "b",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl+L => Cmd+L (Open url location) (Only in browsers)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.mozilla\\.firefox$",
+                                            "^org\\.mozilla\\.firefoxdeveloperedition$",
+                                            "^org\\.mozilla\\.nightly$",
+                                            "^com\\.microsoft\\.Edge",
+                                            "^com\\.google\\.Chrome$",
+                                            "^com\\.brave\\.Browser$",
+                                            "^com\\.apple\\.Safari$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "l",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl+R => Cmd+R (Reload) (Only in browsers)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.mozilla\\.firefox$",
+                                            "^org\\.mozilla\\.firefoxdeveloperedition$",
+                                            "^org\\.mozilla\\.nightly$",
+                                            "^com\\.microsoft\\.Edge",
+                                            "^com\\.google\\.Chrome$",
+                                            "^com\\.brave\\.Browser$",
+                                            "^com\\.apple\\.Safari$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "r",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl+Tab => Cmd+Tab (Switch application)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "tab",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "tab",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "option",
+                                            "left_shift"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "tab",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl+(Shift)+Right/left arrow => Alt+(Shift)+Right/left arrow (Move cursor one word with selection and without selection)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$",
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$",
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "right_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl+Up/down arrow => Up/down arrow (Move cursor up/down)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$",
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "up_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$",
+                                            "^org\\.macports\\.X11$",
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^co\\.zeit\\.hyperterm$",
+                                            "^co\\.zeit\\.hyper$",
+                                            "^io\\.alacritty$",
+                                            "^net\\.kovidgoyal\\.kitty$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "down_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Cmd+L => Logout (CGSession -suspend)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/System/Library/CoreServices/Menu\\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl+Shift+Esc => Open Activity Monitor",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc$",
+                                            "^com\\.microsoft\\.rdc\\.mac$",
+                                            "^com\\.microsoft\\.rdc\\.macos$",
+                                            "^com\\.microsoft\\.rdc\\.osx\\.beta$",
+                                            "^net\\.sf\\.cord$",
+                                            "^com\\.thinomenon\\.RemoteDesktopConnection$",
+                                            "^com\\.itap-mobile\\.qmote$",
+                                            "^com\\.nulana\\.remotixmac$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer$",
+                                            "^com\\.p5sys\\.jump\\.mac\\.viewer\\.web$",
+                                            "^com\\.teamviewer\\.TeamViewer$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.2X\\.Client\\.Mac$",
+                                            "^com\\.vmware\\.fusion$",
+                                            "^com\\.vmware\\.horizon$",
+                                            "^com\\.vmware\\.view$",
+                                            "^com\\.parallels\\.desktop$",
+                                            "^com\\.parallels\\.vm$",
+                                            "^com\\.parallels\\.desktop\\.console$",
+                                            "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                                            "^com\\.citrix\\.XenAppViewer$",
+                                            "^com\\.vmware\\.proxyApp\\.",
+                                            "^com\\.parallels\\.winapp\\.",
+                                            "^tv\\.parsec\\.www$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control",
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Activity Monitor.app'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Return => Cmd+o (Open) (Only in Finder)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com.apple.finder"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "return_or_enter",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "o",
+                                        "modifiers": [
+                                            "right_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "F2 => Return (Rename) (Only in Finder)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com.apple.finder"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f2"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "return_or_enter"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Command+left_arrow => Cmd+backspace (Go back) (Only in Finder)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com.apple.finder"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "left_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Ctrl+Left Click => Cmd+Left Click (select multiple items)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    },
+                                    "pointing_button": "button1"
+                                },
+                                "to": [
+                                    {
+                                        "modifiers": [
+                                            "command"
+                                        ],
+                                        "pointing_button": "button1"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "devices": [
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 636,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "apple_vendor_top_case_key_code": "keyboard_fn"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_control"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_control"
+                            },
+                            "to": [
+                                {
+                                    "apple_vendor_top_case_key_code": "keyboard_fn"
+                                }
+                            ]
+                        }
+                    ],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 636,
+                        "vendor_id": 1452
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 34304,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 50475,
+                        "vendor_id": 1133
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 50475,
+                        "vendor_id": 1133
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": true,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 2040,
+                        "vendor_id": 1118
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "left_alt"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_command"
+                                }
+                            ]
+                        }
+                    ],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 50498,
+                        "vendor_id": 1133
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": true,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 11082,
+                        "vendor_id": 1008
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "grave_accent_and_tilde"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "non_us_backslash"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_alt"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_command"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_control"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_control"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "non_us_backslash"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "grave_accent_and_tilde"
+                                }
+                            ]
+                        }
+                    ],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 45913,
+                        "vendor_id": 1133
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "apple_vendor_top_case_key_code": "keyboard_fn"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "right_control"
+                                }
+                            ]
+                        }
+                    ],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 17733,
+                        "vendor_id": 1241
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "left_alt"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_command"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_command"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_alt"
+                                }
+                            ]
+                        }
+                    ],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 49960,
+                        "vendor_id": 1133
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "left_command"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_option"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_option"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_command"
+                                }
+                            ]
+                        }
+                    ],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 49271,
+                        "vendor_id": 1133
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 49232,
+                        "vendor_id": 1133
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": true,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 203,
+                        "vendor_id": 1118
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": true,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 5,
+                        "vendor_id": 7119
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": true,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                }
+            ],
+            "fn_function_keys": [
+                {
+                    "from": {
+                        "key_code": "f1"
+                    },
+                    "to": [
+                        {
+                            "key_code": "f1"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f2"
+                    },
+                    "to": [
+                        {
+                            "key_code": "f2"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f3"
+                    },
+                    "to": [
+                        {
+                            "key_code": "f3"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f4"
+                    },
+                    "to": [
+                        {
+                            "key_code": "f4"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f5"
+                    },
+                    "to": [
+                        {
+                            "key_code": "f5"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f6"
+                    },
+                    "to": [
+                        {
+                            "key_code": "f6"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f7"
+                    },
+                    "to": [
+                        {
+                            "key_code": "f7"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f8"
+                    },
+                    "to": [
+                        {
+                            "key_code": "f8"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f9"
+                    },
+                    "to": [
+                        {
+                            "key_code": "f9"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f10"
+                    },
+                    "to": [
+                        {
+                            "key_code": "f10"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f11"
+                    },
+                    "to": [
+                        {
+                            "key_code": "f10"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "f12"
+                    },
+                    "to": [
+                        {
+                            "key_code": "f12"
+                        }
+                    ]
+                }
+            ],
+            "name": "Default profile",
+            "parameters": {
+                "delay_milliseconds_before_open_device": 1000
+            },
+            "selected": true,
+            "simple_modifications": [
+                {
+                    "from": {
+                        "key_code": "grave_accent_and_tilde"
+                    },
+                    "to": [
+                        {
+                            "key_code": "backslash"
+                        }
+                    ]
+                },
+                {
+                    "from": {
+                        "key_code": "non_us_backslash"
+                    },
+                    "to": [
+                        {
+                            "key_code": "grave_accent_and_tilde"
+                        }
+                    ]
+                }
+            ],
+            "virtual_hid_keyboard": {
+                "country_code": 0,
+                "indicate_sticky_modifier_keys_state": true,
+                "mouse_key_xy_scale": 100
+            }
+        }
+    ]
+}
