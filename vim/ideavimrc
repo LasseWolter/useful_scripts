@@ -1,0 +1,105 @@
+" Only source .vimrc-base - contains NO plugins
+source ~/.vimrc-base
+
+" Vim Plugins
+Plug 'easymotion/vim-easymotion'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+
+>>>>> Nerd tree settings----------------------
+let NERDTreeShowHidden=1    " show hidden files (dot files)
+let NERDTreeQuitOnOpen = 1  " close nerdtree on opening a file
+"<<<<<Nerd tree settings----------------------
+
+" Need to define this here because the .vimrc uses the overwindow search
+" which is currently not supported by the idea-plugin
+" see: https://github.com/AlexPl292/IdeaVim-EasyMotion#supported-commands
+nmap s <Plug>(easymotion-bd-f)
+
+" Not needed when using relative line numbers
+" nmap <Leader>j <Plug>(easymotion-j)
+" nmap <Leader>k <Plug>(easymotion-k)
+
+nmap <C-w>v <Action>(SplitVertically)
+nmap <C-w>s <Action>(SplitHorizontally)
+
+imap <C-y> <Action>(EditorChooseLookupItem)
+nmap <C-y> <Action>(EditorChooseLookupItem)
+
+nmap <C-v> <C-q>
+
+" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+" Map \r to the Reformat Code action
+" map <leader>r <Action>(ReformatCode)
+
+" map <leader>r to rename an element
+map <leader>rn <Action>(RenameElement)
+map <leader>a <Action>(GotoAction)
+
+map <leader>f <Action>(ReformatCode) 
+
+" Map <leader>d(d|r|c) to start debug|run|cancel run
+map <leader>d <Action>(Debug)
+map <leader>dd <Action>(Debug)
+map <leader>dr <Action>(Run)
+map <leader>dc <Action>(Stop)
+
+" Map mb to open build-popup
+map <leader>mb <Action>(build)
+
+map <leader>o <Action>(FileStructurePopup)
+
+map <leader>\ <Action>(ToggleDistractionFreeMode)
+map <leader>z <Action>(HideAllWindows)
+
+map <leader>e <Action>(SelectInProjectView)
+
+map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+
+map <leader>t <Action>(Rider.UnitTesting.MainMenu)
+
+map <leader>sf <Action>(GotoFile)
+" nmap <C-j> <Action>(GotoFile)
+
+map <C-l> <C-^> 
+
+map <leader>l :set relativenumber!<Cr>
+
+map <leader>gg <Action>(VcsGroups)
+map <leader>gb <Action>(Git.Branches)
+
+" Yank to system clipboard
+map <leader>y "+y
+
+"Mark current line as breakpoint
+map <leader>b <Action>(ToggleLineBreakpoint)
+
+" Map \b to toggle the breakpoint on the current line
+nmap gi <Action>(GotoImplementation)
+map gr <Action>(FindUsages)
+
+nmap K <Action>(QuickJavaDoc)
+
+nmap ]d <Action>(ReSharperGotoNextErrorInSolution)
+nmap [d <Action>(ReSharperGotoPrevErrorInSolution)
+
+nmap [f <Action>(GotoPreviousError)
+nmap ]f <Action>(GotoPreviousError)
+
+nmap ]m <Action>(MethodDown)
+nmap [m <Action>(MethodUp)
+
+nmap ]c <Action>(VcsShowNextChangeMarker)
+nmap [c <Action>(VcsShowPrevChangeMarker)
+
+nmap <A-Right> <Action>(Forward)
+nmap <A-Left> <Action>(Back)
+"nmap <C-i> <Action>(Forward)
+"nmap <C-o> <Action>(Back)
+
+
+" Tab shortcuts
+nmap tp <Action>(PinActiveEditorTab)
+
+" Clashes with normal yy use in vim
+" nmap yy <Action>(CopyPaths)
