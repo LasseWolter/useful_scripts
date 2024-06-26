@@ -11,6 +11,7 @@ alias ll='ls -lha'
 alias la='ls -a'
 
 alias zshrc='vi ~/.zshrc && source ~/.zshrc'
+alias bashrc='vi ~/.bashrc && source ~/.bashrc'
 alias bash_aliases='vi ~/.bash_aliases && source ~/.bash_aliases'
 
 # Display file size and sort by it
