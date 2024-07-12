@@ -1,0 +1,50 @@
+" ========== GENERAL-BINDINGS ==========
+let mapleader = " "
+set visualbell false
+set number 
+set relativenumber
+
+" ========== REMAPS ==========
+vmap J :m '>+1<CR>gv=gv
+vmap K :m '<-2<CR>gv=gv
+nmap <Esc> :noh<return><esc>
+
+-- increment number under cursor (use [m]ore instead of [a] because <C-a> is my tmux prefix
+nmap <C-m> <C-a>
+vmap <C-m> <C-a>
+vmap gm g<C-a>) -- remap gm because g<C-m> doesn't work
+
+nmap J mzJ`z
+nmap <c-d> <c-d>zz
+nmap <c-u> <c-u>zz
+nmap n nzzzv
+nmap N Nzzzv
+nmap <leader>l <c-^>
+
+nmap <leader>f vim.lsp.buf.format
+nmap <leader>e :Explore<CR>
+
+" replace all instances of text under cursor / text selected in visual mode
+nmap <leader>s [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]
+vmap <leader>s [["hy:%s/<C-r>h/<C-r>h/g<left><left>]]
+
+imap jj <Esc>
+nmap tn :tabnew
+
+" ========== COPY-PASTE-BINDINGS ==========
+" F3 to toggle paste-mode on and off (in insert mode you can only turn ON, not OFF)
+nmap <F3> :set invpaste<CR>
+imap <F3> <C-o>:set invpaste<CR>
+
+" copy next yank into sys clipboard (credit to asbjornHaland)
+nmap <leader>y [["+y]])
+vmap <leader>y [["+y]])
+nmap <leader>Y [["+Y]])
+" Paste from sysClipboard
+nmap <leader>p <F3>i<C-r>+<esc><F3>
+" Paste formatted with <C-v> in insert mode (using paste mode)
+imap <C-v> <C-o><F3><C-r>+<C-o><F3>
+
+" Copy with <C-c> in normal and visual mode
+vmap <C-c> "+y
+nmap <C-c> "+y
