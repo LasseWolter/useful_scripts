@@ -5,8 +5,9 @@ source ~/.vimrc-base
 Plug 'easymotion/vim-easymotion'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 
->>>>> Nerd tree settings----------------------
+">>>>> Nerd tree settings----------------------
 let NERDTreeShowHidden=1    " show hidden files (dot files)
 let NERDTreeQuitOnOpen = 1  " close nerdtree on opening a file
 "<<<<<Nerd tree settings----------------------
@@ -27,6 +28,7 @@ imap <C-y> <Action>(EditorChooseLookupItem)
 nmap <C-y> <Action>(EditorChooseLookupItem)
 
 nmap <C-v> <C-q>
+map <C-/> gcc
 
 " -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 " Map \r to the Reformat Code action
