@@ -1,0 +1,2 @@
+# Use CapsLock as additional escape key
+setxkbmap -option caps:escape
