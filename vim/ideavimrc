@@ -28,6 +28,7 @@ imap <C-y> <Action>(EditorChooseLookupItem)
 nmap <C-y> <Action>(EditorChooseLookupItem)
 
 nmap <C-v> <C-q>
+" vscode comment toggle mapping
 map <C-/> gcc
 
 " -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
@@ -63,9 +64,9 @@ map <leader>t <Action>(Rider.UnitTesting.MainMenu)
 map <leader>sf <Action>(GotoFile)
 " nmap <C-j> <Action>(GotoFile)
 
-map <C-l> <C-^> 
+map <leader-l> <C-^>
 
-map <leader>l :set relativenumber!<Cr>
+map <C-k>l :set relativenumber!<Cr>
 
 map <leader>gg <Action>(VcsGroups)
 map <leader>gb <Action>(Git.Branches)
