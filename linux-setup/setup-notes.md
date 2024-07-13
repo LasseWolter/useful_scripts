@@ -14,5 +14,7 @@
 		- add this to `.profile` to run it on every login 
 		- source: https://superuser.com/questions/1196241/how-to-remap-caps-lock-on-wayland
 
-
+- make bash completion case insensitive
+	- add or uncomment `set completion-ignore-case On` in /etc/inputrc
+	- to only change for the user create an `~/.inputrc` file and add it there
 
