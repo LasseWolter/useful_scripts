@@ -33,8 +33,7 @@ nmap tn :tabnew
 
 " ========== COPY-PASTE-BINDINGS ==========
 " F3 to toggle paste-mode on and off (in insert mode you can only turn ON, not OFF)
-nmap <F3> :set invpaste<CR>
-imap <F3> <C-o>:set invpaste<CR>
+set pastetoggle=<F3>
 
 " copy next yank into sys clipboard (credit to asbjornHaland)
 nmap <leader>y [["+y]])
@@ -43,7 +42,7 @@ nmap <leader>Y [["+Y]])
 " Paste from sysClipboard
 nmap <leader>p <F3>i<C-r>+<esc><F3>
 " Paste formatted with <C-v> in insert mode (using paste mode)
-imap <C-v> <C-o><F3><C-r>+<C-o><F3>
+imap <C-v> <F3><C-r>+<F3>
 
 " Copy with <C-c> in normal and visual mode
 vmap <C-c> "+y
