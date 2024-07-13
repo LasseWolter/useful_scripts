@@ -17,4 +17,8 @@
 - make bash completion case insensitive
 	- add or uncomment `set completion-ignore-case On` in /etc/inputrc
 	- to only change for the user create an `~/.inputrc` file and add it there
+	- source: https://askubuntu.com/questions/87061/can-i-make-tab-auto-completion-case-insensitive-in-bash   
 
+- only show current dir in bash prompt 
+	- Change the \w (lowercase) to \W (uppercase) in your bashrc
+	- source: https://superuser.com/questions/60555/show-only-current-directory-name-not-full-path-on-bash-prompt
