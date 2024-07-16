@@ -22,3 +22,13 @@
 - only show current dir in bash prompt 
 	- Change the \w (lowercase) to \W (uppercase) in your bashrc
 	- source: https://superuser.com/questions/60555/show-only-current-directory-name-not-full-path-on-bash-prompt
+
+- remap Ctrl+n to DOWN and Ctrl+p to UP
+	- add Xmodmap file in this folder under `~/.Xmodmap`
+	- then add the following in `/usr/share/X11/xkb/symbols/us`  (or whichever keyboard layout you are using)
+		```
+		key <AC07> {    [   n,  N,  Down    ]   };
+		key <AC08> {    [   p,  P,  Up      ]   };
+		```
+	- run `xmodmap ~/.Xmodmap`
+
