@@ -61,15 +61,15 @@ map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
 
 map <leader>t <Action>(Rider.UnitTesting.MainMenu)
 
+" Search maps
 map <leader>sf <Action>(GotoFile)
+map <leader>sg <Action>(FindInPath)
+
 " nmap <C-j> <Action>(GotoFile)
 
 map <leader-l> <C-^>
 
 map <C-k>l :set relativenumber!<Cr>
-
-map <leader>gg <Action>(VcsGroups)
-map <leader>gb <Action>(Git.Branches)
 
 " Yank to system clipboard
 map <leader>y "+y
@@ -92,14 +92,22 @@ nmap ]f <Action>(GotoPreviousError)
 nmap ]m <Action>(MethodDown)
 nmap [m <Action>(MethodUp)
 
-nmap ]c <Action>(VcsShowNextChangeMarker)
-nmap [c <Action>(VcsShowPrevChangeMarker)
-
 nmap <A-Right> <Action>(Forward)
 nmap <A-Left> <Action>(Back)
 "nmap <C-i> <Action>(Forward)
 "nmap <C-o> <Action>(Back)
 
+" GIT
+nmap ]c <Action>(VcsShowNextChangeMarker)<Action>(NextDiff)
+nmap [c <Action>(VcsShowPrevChangeMarker)<Action>(PrevDiff)
+
+map <leader>gc <Action>(ActivateCommitToolWindow)
+map <leader>[c <Action>(ActivateCommitToolWindow)
+map <leader>gg <Action>(VcsGroups)
+map <leader>gb <Action>(Git.Branches)
+
+" (h)unk (r)eset
+nmap <leader>hr <Action>(Vcs.RollbackChangedLines)
 
 " Tab shortcuts
 nmap tp <Action>(PinActiveEditorTab)
