@@ -3,6 +3,11 @@ let mapleader = " "
 set visualbell false
 set number 
 set relativenumber
+set ignorecase  " This is required to have for 'set smartcase' to work
+set smartcase   " Enable smart-case search
+
+set hlsearch    " Highlight all search results
+set incsearch   " Enable incremental search => search as you type
 
 " ========== REMAPS ==========
 vmap J :m '>+1<CR>gv=gv
