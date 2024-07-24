@@ -7,6 +7,9 @@ Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 
+Plug 'machakann/vim-highlightedyank'
+let g:highlightedyank_highlight_color = "rgba(241, 153, 64, 180)"
+
 ">>>>> Nerd tree settings----------------------
 let NERDTreeShowHidden=1    " show hidden files (dot files)
 let NERDTreeQuitOnOpen = 1  " close nerdtree on opening a file
@@ -98,13 +101,14 @@ nmap <A-Left> <Action>(Back)
 "nmap <C-o> <Action>(Back)
 
 " GIT
+" Assign two actions because to use it for changes in normal files and diff files
 nmap ]c <Action>(VcsShowNextChangeMarker)<Action>(NextDiff)
 nmap [c <Action>(VcsShowPrevChangeMarker)<Action>(PrevDiff)
 
 map <leader>gc <Action>(ActivateCommitToolWindow)
-map <leader>[c <Action>(ActivateCommitToolWindow)
 map <leader>gg <Action>(VcsGroups)
 map <leader>gb <Action>(Git.Branches)
+map <leader>ga <Action>(Annotate)
 
 " (h)unk (r)eset
 nmap <leader>hr <Action>(Vcs.RollbackChangedLines)
