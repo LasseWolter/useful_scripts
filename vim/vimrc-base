@@ -9,17 +9,26 @@ set smartcase   " Enable smart-case search
 set hlsearch    " Highlight all search results
 set incsearch   " Enable incremental search => search as you type
 
+" easy split movement
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " ========== REMAPS ==========
 vmap J :m '>+1<CR>gv=gv
 vmap K :m '<-2<CR>gv=gv
 nmap <Esc> :noh<return><esc>
 
--- increment number under cursor (use [m]ore instead of [a] because <C-a> is my tmux prefix
+" increment number under cursor (use [m]ore instead of [a] because <C-a> is my tmux prefix
 nmap <C-m> <C-a>
 vmap <C-m> <C-a>
-vmap gm g<C-a>) -- remap gm because g<C-m> doesn't work
+" remap gm because g<C-m> doesn't work
+vmap gm g<C-a>)
 
-nmap J mzJ`z
+" doesn't work right now
+" nmap J mkJ`k
+
 nmap <c-d> <c-d>zz
 nmap <c-u> <c-u>zz
 nmap n nzzzv
