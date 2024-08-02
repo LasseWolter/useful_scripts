@@ -7,7 +7,7 @@ alias gs='git status'
 alias gd='git diff'
 alias gdc='git diff --cached'
 
-alias gitRmBranchesNotOnRemote="git fetch -p && for branch in \$(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '\$5 ==\"[gone]\" {sub(\"refs/heads/\", \"\", \$1); print \$1}'); do git branch -D \$branch; done"
+alias gitRmBranchesNotOnRemote="git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done"
 alias rmVimSwp='rm -r ~/.local/state/nvim/swap/*'
 
 alias ls='ls -F'
@@ -21,7 +21,7 @@ alias bash_aliases='vi ~/.bash_aliases && source ~/.bash_aliases'
 # Display file size and sort by it
 alias lt='du -sh * | sort -h'
 
-# # Use ugrep instead of grep
+# Use ugrep instead of grep - uncomment if you have ugrep installed
 # alias grep=ugrep
 
 # LANGUAGE SPECIFIC
