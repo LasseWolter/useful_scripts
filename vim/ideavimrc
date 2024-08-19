@@ -15,6 +15,12 @@ let NERDTreeShowHidden=1    " show hidden files (dot files)
 let NERDTreeQuitOnOpen = 1  " close nerdtree on opening a file
 "<<<<<Nerd tree settings----------------------
 
+" Multi caret
+nmap <C-n> <Action>(EditorCloneCaretBelow)
+nmap <C-p> <Action>(EditorCloneCaretAbove)
+nmap <esc> <Action>(EditorToggleColumnMode)<Action>(EditorToggleColumnMode)
+
+
 " Need to define this here because the .vimrc uses the overwindow search
 " which is currently not supported by the idea-plugin
 " see: https://github.com/AlexPl292/IdeaVim-EasyMotion#supported-commands
