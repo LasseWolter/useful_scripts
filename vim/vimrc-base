@@ -54,7 +54,7 @@ nmap <leader>y [["+y]])
 vmap <leader>y [["+y]])
 nmap <leader>Y [["+Y]])
 " Paste from sysClipboard
-nmap <leader>p <F3>i<C-r>+<esc><F3>
+nmap <leader>p <F3>a<C-r>+<esc><F3>
 " Paste formatted with <C-v> in insert mode (using paste mode)
 imap <C-v> <F3><C-r>+<F3>
 
