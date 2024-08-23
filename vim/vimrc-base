@@ -20,7 +20,7 @@ nnoremap <C-l> <C-w>l
 " ========== REMAPS ==========
 vmap J :m '>+1<CR>gv=gv
 vmap K :m '<-2<CR>gv=gv
-nmap <Esc> :noh<return><esc>
+nmap <Esc> :noh<CR>
 
 " increment number under cursor (use [m]ore instead of [a] because <C-a> is my tmux prefix
 nmap <C-m> <C-a>
