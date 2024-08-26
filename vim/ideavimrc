@@ -1,3 +1,4 @@
+
 " Only source .vimrc-base - contains NO plugins
 source ~/.vimrc-base
 
@@ -68,8 +69,6 @@ map <leader>e <Action>(SelectInProjectView)
 
 map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
 
-map <leader>t <Action>(Rider.UnitTesting.MainMenu)
-
 " Search maps
 map <leader>sf <Action>(GotoFile)
 map <leader>sg <Action>(FindInPath)
@@ -120,7 +119,16 @@ map <leader>ga <Action>(Annotate)
 " (h)unk (r)eset
 nmap <leader>hr <Action>(Vcs.RollbackChangedLines)
 
-" Tab shortcuts
+" UNIT TESTS
+map <leader>t <Action>(Rider.UnitTesting.MainMenu)
+map <leader>ur <Action>(RiderUnitTestRunContextAction)
+map <leader>ud <Action>(RiderUnitTestDebugContextAction)
+map <leader>ul <Action>(RiderUnitTestRunSolutionAction)
+map <leader>uk <Action>(RiderUnitTestCoverSolutionAction)
+map <leader>uu <Action>(RiderUnitTestRepeatPreviousRunAction)
+map <leader>uy <Action>(RiderUnitTestRepeatPreviousRunAction)
+
+" EDITOR TABS 
 nmap tp <Action>(PinActiveEditorTab)
 
 " Clashes with normal yy use in vim
