@@ -1,6 +1,6 @@
 " ========== GENERAL-BINDINGS ==========
-let mapleader = " "
-set visualbell false
+let mapleader=" "
+set novisualbell
 set number 
 set relativenumber
 set ignorecase  " This is required to have for 'set smartcase' to work
