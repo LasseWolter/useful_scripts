@@ -10,6 +10,8 @@ alias gdc='git diff --cached'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative -n8"
 alias gll="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gcl='git config --list'
+alias glc='git log --format="%B"'
+alias gc='git checkout'
 
 gitRmBranchesNotOnRemote() {
     git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done
@@ -30,6 +32,8 @@ alias lt='du -sh * | sort -h'
 
 # Use ugrep instead of grep - uncomment if you have ugrep installed
 # alias grep=ugrep
+
+alias xcc='xclip -select clipboard'
 
 # LANGUAGE SPECIFIC
 # .NET
