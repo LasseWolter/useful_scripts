@@ -115,6 +115,7 @@ map <leader>gc <Action>(ActivateCommitToolWindow)
 map <leader>gg <Action>(VcsGroups)
 map <leader>gb <Action>(Git.Branches)
 map <leader>ga <Action>(Annotate)
+map <leader>gp <Action>(ActivatePullRequestsToolWindow)
 
 " (h)unk (r)eset
 nmap <leader>hr <Action>(Vcs.RollbackChangedLines)
