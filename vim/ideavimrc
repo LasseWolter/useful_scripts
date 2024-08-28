@@ -1,4 +1,3 @@
-
 " Only source .vimrc-base - contains NO plugins
 source ~/.vimrc-base
 
@@ -7,6 +6,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'dbakker/vim-paragraph-motion'
 
 Plug 'machakann/vim-highlightedyank'
 let g:highlightedyank_highlight_color = "rgba(241, 153, 64, 180)"
