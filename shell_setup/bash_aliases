@@ -38,3 +38,4 @@ alias xcc='xclip -select clipboard'
 # LANGUAGE SPECIFIC
 # .NET
 alias rmBinObj='find . -iname bin -o -iname obj | xargs rm -rf'
+alias csi=csharprepl
