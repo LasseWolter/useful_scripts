@@ -38,4 +38,5 @@ alias xcc='xclip -select clipboard'
 # LANGUAGE SPECIFIC
 # .NET
 alias rmBinObj='find . -iname bin -o -iname obj | xargs rm -rf'
+# only works if csharprepl has been installed: https://github.com/waf/CSharpRepl?tab=readme-ov-file
 alias csi=csharprepl
