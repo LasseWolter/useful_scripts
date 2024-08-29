@@ -1,7 +1,7 @@
 " ========== GENERAL-BINDINGS ==========
 let mapleader=" "
-set novisualbell
-set number 
+set visualbell
+set number
 set relativenumber
 set ignorecase  " This is required to have for 'set smartcase' to work
 set smartcase   " Enable smart-case search
