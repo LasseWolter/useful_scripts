@@ -126,6 +126,7 @@ map <leader>ur <Action>(RiderUnitTestRunContextAction)
 map <leader>ud <Action>(RiderUnitTestDebugContextAction)
 map <leader>ul <Action>(RiderUnitTestRunSolutionAction)
 map <leader>uc <Action>(RiderUnitTestCoverSolutionAction)
+map <leader>uh <Action>(RiderDotCoverHighlightingCodeAction)
 map <leader>uu <Action>(RiderUnitTestRepeatPreviousRunAction)
 map <leader>uy <Action>(RiderUnitTestRepeatPreviousRunAction)
 
