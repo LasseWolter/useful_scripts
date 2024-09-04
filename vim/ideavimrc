@@ -125,7 +125,7 @@ map <leader>t <Action>(Rider.UnitTesting.MainMenu)
 map <leader>ur <Action>(RiderUnitTestRunContextAction)
 map <leader>ud <Action>(RiderUnitTestDebugContextAction)
 map <leader>ul <Action>(RiderUnitTestRunSolutionAction)
-map <leader>uk <Action>(RiderUnitTestCoverSolutionAction)
+map <leader>uc <Action>(RiderUnitTestCoverSolutionAction)
 map <leader>uu <Action>(RiderUnitTestRepeatPreviousRunAction)
 map <leader>uy <Action>(RiderUnitTestRepeatPreviousRunAction)
 
