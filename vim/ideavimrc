@@ -79,6 +79,7 @@ map <leader-l> <C-^>
 
 map <C-k>l :set relativenumber!<Cr>
 map <C-k>p <Action>(CopyReferencePopupGroup)
+map <C-k>s <Action>(RiderManageRecentProjects)
 
 " Yank to system clipboard
 map <leader>y "+y
