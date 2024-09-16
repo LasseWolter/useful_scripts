@@ -67,8 +67,6 @@ map <leader>z <Action>(HideAllWindows)
 
 map <leader>e <Action>(SelectInProjectView)
 
-map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
-
 " Search maps
 map <leader>sf <Action>(GotoFile)
 map <leader>sg <Action>(FindInPath)
@@ -117,6 +115,9 @@ map <leader>gg <Action>(VcsGroups)
 map <leader>gb <Action>(Git.Branches)
 map <leader>ga <Action>(Annotate)
 map <leader>gp <Action>(ActivatePullRequestsToolWindow)
+map <leader>gh <Action>(Vcs.ShowTabbedFileHistory)
+map <leader>ghf <Action>(Vcs.ShowTabbedFileHistory)
+map <leader>ghb <Action>(Vcs.ShowHistoryForBlock)
 
 " (h)unk (r)eset
 nmap <leader>hr <Action>(Vcs.RollbackChangedLines)
