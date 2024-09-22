@@ -3,7 +3,10 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/Git/ ~/tmp/ ~/Interview//igs/TechTest/ ~/Programming/Privat/ ~/Desktop/ ~/.config -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$( (find ~/.config/nvim -type d -maxdepth 0 \
+    && find ~/ -type d -maxdepth 0 \
+    && find ~/Programming/Privat -mindepth 1 -maxdepth 1 -type d \
+    ) | fzf)
 fi
 
 if [[ -z $selected ]]; then
