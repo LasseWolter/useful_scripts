@@ -3,6 +3,7 @@ alias vi=nvim
 alias init-lua='vi ~/.config/nvim/init.lua'
 
 # GIT
+alias gco='git checkout'
 alias gs='git status'
 alias ga='git add .'
 alias gd='git diff'
