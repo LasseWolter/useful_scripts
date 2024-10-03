@@ -117,7 +117,7 @@ map <leader>ga <Action>(Annotate)
 map <leader>gp <Action>(ActivatePullRequestsToolWindow)
 map <leader>gh <Action>(Vcs.ShowTabbedFileHistory)
 map <leader>ghf <Action>(Vcs.ShowTabbedFileHistory)
-map <leader>ghb <Action>(Vcs.ShowHistoryForBlock)
+map <leader>ghs <Action>(Vcs.ShowHistoryForBlock)
 
 " (h)unk (r)eset
 nmap <leader>hr <Action>(Vcs.RollbackChangedLines)
