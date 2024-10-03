@@ -5,13 +5,15 @@ alias init-lua='vi ~/.config/nvim/init.lua'
 # GIT
 alias gco='git checkout'
 alias gs='git status'
-alias ga='git add .'
+alias ga='git add'
+alias gaa='git add .'
 alias gd='git diff'
 alias gdc='git diff --cached'
-alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative -n8"
-alias gll="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias gl="git log --pretty='%C(yellow)%h %C(cyan)%cd %Cblue%aN%C(auto)%d %Creset%s' --graph --date=relative --date-order -n8"
+alias gll="git log --pretty='%C(yellow)%h %C(cyan)%cd %Cblue%aN%C(auto)%d %Creset%s' --graph --date=relative --date-order"
 alias glc='git log --format="%B"'
-alias gc='git checkout'
+alias gco='git checkout'
+alias gcm='git commit'
 
 alias gcl='git config --list'
 alias gcll=gitLocalConfigs

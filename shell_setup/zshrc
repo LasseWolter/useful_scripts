@@ -1,14 +1,19 @@
-source ~/.bashrc
+source ~/.bash_aliases
 
-export PATH="${PATH}:/Library/Java/JavaVirtualMachines/microsoft-21.jdk/Contents/Home"
-export PATH="/Users/lassewolter/.scripts:${PATH}"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/microsoft-21.jdk/Contents/Home"
+export PATH="/Users/${USER}/.scripts:${PATH}"
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 bindkey -s ^f "tmux-sessionizer\n"
 
 autoload -Uz compinit && compinit
+
+# Case-insensitive matching
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
+
+# Use zoxide when using `cd`
 eval "$(zoxide init --cmd cd zsh)"
 
 
