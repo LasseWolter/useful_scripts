@@ -20,7 +20,9 @@ let NERDTreeQuitOnOpen = 1  " close nerdtree on opening a file
 " Multi caret based on lines (not words/matches)
 nmap <C-n> <Action>(EditorCloneCaretBelow)
 nmap <C-p> <Action>(EditorCloneCaretAbove)
-nmap <esc> <Action>(EditorToggleColumnMode)<Action>(EditorToggleColumnMode)
+
+" remove all highlighted text + tab out and back in to remove multicursor
+nmap <esc> :noh<CR><Action>(EditorToggleColumnMode)<Action>(EditorToggleColumnMode)
 
 " Increase/Decrease number under cursor
 nmap <C-.> <C-a>
