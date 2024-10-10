@@ -9,7 +9,7 @@ set smartcase   " Enable smart-case search
 set hlsearch    " Highlight all search results
 set incsearch   " Enable incremental search => search as you type
 
-set scrolloff=10 " always keep a margin of 10 lines to the screen edge when scrolling
+set scrolloff=5 " always keep a margin of 10 lines to the screen edge when scrolling
 
 " easy split movement
 nnoremap <C-h> <C-w>h
