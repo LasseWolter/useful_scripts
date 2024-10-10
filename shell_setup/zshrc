@@ -1,6 +1,8 @@
 source ~/.bash_aliases
 
 export PATH="/Users/${USER}/.scripts:${PATH}"
+export PATH="/Users/${USER}/.local/bin:${PATH}"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
@@ -16,5 +18,4 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 # Use zoxide when using `cd`
 eval "$(zoxide init --cmd cd zsh)"
 
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
