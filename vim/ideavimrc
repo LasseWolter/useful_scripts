@@ -7,6 +7,7 @@ Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'dbakker/vim-paragraph-motion'
+Plug 'terryma/vim-multiple-cursors'
 
 Plug 'machakann/vim-highlightedyank'
 let g:highlightedyank_highlight_color = "rgba(241, 153, 64, 180)"
@@ -16,11 +17,10 @@ let NERDTreeShowHidden=1    " show hidden files (dot files)
 let NERDTreeQuitOnOpen = 1  " close nerdtree on opening a file
 "<<<<<Nerd tree settings----------------------
 
-" Multi caret
+" Multi caret based on lines (not words/matches)
 nmap <C-n> <Action>(EditorCloneCaretBelow)
 nmap <C-p> <Action>(EditorCloneCaretAbove)
 nmap <esc> <Action>(EditorToggleColumnMode)<Action>(EditorToggleColumnMode)
-
 
 " Need to define this here because the .vimrc uses the overwindow search
 " which is currently not supported by the idea-plugin
