@@ -18,6 +18,9 @@ alias gcm='git commit'
 alias gcl='git config --list'
 alias gcll=gitLocalConfigs
 
+# Can only be used if github CLI (gh) is installed
+alias ghid='gh issue develop'
+
 gitLocalConfigs() {
     echo "===================LOCAL CONFIG====================";
     git config --list --local;
