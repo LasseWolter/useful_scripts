@@ -4,6 +4,27 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Left alt + spacebar -> Left command + spacebar",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "mandatory": ["left_alt"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "spacebar",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Ctrl+C, Ctrl+V, Ctrl+X => Cmd+C (Copy), Cmd+V (Paste), Cmd+X (Cut)",
                         "manipulators": [
                             {
@@ -2182,23 +2203,6 @@
                 {
                     "identifiers": {
                         "is_keyboard": true,
-                        "product_id": 17733,
-                        "vendor_id": 1241
-                    },
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "left_alt" },
-                            "to": [{ "key_code": "left_command" }]
-                        },
-                        {
-                            "from": { "key_code": "left_command" },
-                            "to": [{ "key_code": "left_alt" }]
-                        }
-                    ]
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
                         "product_id": 49960,
                         "vendor_id": 1133
                     },
@@ -2291,18 +2295,19 @@
             "selected": true,
             "simple_modifications": [
                 {
+                    "from": { "key_code": "caps_lock" },
+                    "to": [{ "key_code": "escape" }]
+                },
+                {
                     "from": { "key_code": "grave_accent_and_tilde" },
-                    "to": [{ "key_code": "backslash" }]
+                    "to": [{ "key_code": "non_us_backslash" }]
                 },
                 {
                     "from": { "key_code": "non_us_backslash" },
                     "to": [{ "key_code": "grave_accent_and_tilde" }]
-                },
-                {
-                    "from": { "key_code": "caps_lock" },
-                    "to": [{ "key_code": "escape" }]
                 }
-            ]
+            ],
+            "virtual_hid_keyboard": { "keyboard_type_v2": "iso" }
         }
     ]
 }
