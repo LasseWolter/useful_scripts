@@ -41,6 +41,8 @@ alias bashrc='vi ~/.bashrc && source ~/.bashrc'
 alias bash_aliases='vi ~/.bash_aliases && source ~/.bash_aliases'
 alias local_bash_aliases='vi ~/.local_bash_aliases && source ~/.local_bash_aliases'
 
+alias tmr="tmux rename-window"
+
 # Display file size and sort by it
 alias lt='du -sh * | sort -h'
 
