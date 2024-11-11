@@ -39,6 +39,10 @@ alias ls='ls -F'
 alias ll='ls -lha'
 alias la='ls -a'
 
+
+# diff side by side with colour
+alias diff-colour='diff -y --color=always'
+
 alias zshrc='vi ~/.zshrc && source ~/.zshrc'
 alias bashrc='vi ~/.bashrc && source ~/.bashrc'
 alias bash_aliases='vi ~/.bash_aliases && source ~/.bash_aliases'
