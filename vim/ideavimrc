@@ -78,8 +78,6 @@ map <leader>sf <Action>(GotoFile)
 map <leader>sg <Action>(FindInPath)
 map <leader>ss <Action>(GotoSymbol)
 
-" nmap <C-j> <Action>(GotoFile)
-
 map <leader-l> <C-^>
 
 map <C-k>l :set relativenumber!<Cr>
@@ -109,8 +107,6 @@ nmap [m <Action>(MethodUp)
 
 nmap <A-Right> <Action>(Forward)
 nmap <A-Left> <Action>(Back)
-"nmap <C-i> <Action>(Forward)
-"nmap <C-o> <Action>(Back)
 
 " GIT
 " Assign two actions because to use it for changes in normal files and diff files
@@ -148,6 +144,3 @@ map <leader>cc <Action>(copilot.chat.show)
 map <leader>co <Action>(copilot.openCopilot)
 map <leader>cs <Action>(copilot.openStatus)
 map <leader>cn <Action>(copilot.newChatSession)
-
-" Clashes with normal yy use in vim
-" nmap yy <Action>(CopyPaths)
