@@ -142,5 +142,12 @@ map <leader>uy <Action>(RiderUnitTestRepeatPreviousRunAction)
 " EDITOR TABS 
 nmap tp <Action>(PinActiveEditorTab)
 
+" Github Copilot
+map <leader>ci <Action>(OpenInlineChatAction)
+map <leader>cc <Action>(copilot.chat.show)
+map <leader>co <Action>(copilot.openCopilot)
+map <leader>cs <Action>(copilot.openStatus)
+map <leader>cn <Action>(copilot.newChatSession)
+
 " Clashes with normal yy use in vim
 " nmap yy <Action>(CopyPaths)
