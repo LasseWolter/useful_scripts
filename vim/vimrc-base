@@ -61,3 +61,7 @@ imap <C-v> <F3><C-r>+<F3>
 " Copy with <C-c> in normal and visual mode
 vmap <C-c> "+y
 nmap <C-c> "+y
+
+" tab navigation using vim motions
+nmap gl gt
+nmap gh gT
