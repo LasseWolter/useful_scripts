@@ -26,6 +26,9 @@ restoreMatching() {
     git restore $(find . -name "$1" | grep -v 'node_modules')
 }
 
+restoreRegex() {
+    git restore $(find . -name "*$1*" | grep -v 'node_modules')
+}
 
 gitLocalConfigs() {
     echo "===================LOCAL CONFIG====================";
