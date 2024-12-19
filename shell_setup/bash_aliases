@@ -20,6 +20,12 @@ alias gcll=gitLocalConfigs
 
 # Can only be used if github CLI (gh) is installed
 alias ghid='gh issue develop'
+alias ghpr='gh pr create'
+
+restoreMatching() {
+    git restore $(find . -name "$1" | grep -v 'node_modules')
+}
+
 
 gitLocalConfigs() {
     echo "===================LOCAL CONFIG====================";
