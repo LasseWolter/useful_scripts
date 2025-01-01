@@ -22,6 +22,10 @@ vmap J :m '>+1<CR>gv=gv
 vmap K :m '<-2<CR>gv=gv
 nmap <Esc> :noh<CR>
 
+" Don't jump when highlighting word
+nnoremap *  *N
+nnoremap #  #N
+
 " increment number under cursor (use [m]ore instead of [a] because <C-a> is my tmux prefix
 nmap <C-m> <C-a>
 vmap <C-m> <C-a>
