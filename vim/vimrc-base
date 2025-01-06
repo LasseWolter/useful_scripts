@@ -41,8 +41,7 @@ nmap n nzzzv
 nmap N Nzzzv
 nmap <leader>l <c-^>
 
-" replace all instances of text under cursor / text selected in visual mode
-nmap <leader>s [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]
+" replace all text selected in visual mode
 vmap <leader>s [["hy:%s/<C-r>h/<C-r>h/g<left><left>]]
 
 imap jj <Esc>
