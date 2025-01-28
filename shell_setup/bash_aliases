@@ -3,6 +3,13 @@ alias vi=nvim
 alias init-lua='vi ~/.config/nvim/init.lua'
 
 # GIT
+# git checkout using fzf
+gch() {
+ git checkout "$(git branch | fzf| tr -d '[:space:]')"
+}
+gcha() {
+ git checkout "$(git branch --all | fzf| tr -d '[:space:]')"
+}
 alias gco='git checkout'
 alias gs='git status'
 alias ga='git add'
