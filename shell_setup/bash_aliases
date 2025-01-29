@@ -48,6 +48,7 @@ gitRmBranchesNotOnRemote() {
 
 # K8
 alias k=kubectl
+alias kns=kubens # requires kubens to be installed
 
 alias rmVimSwp='rm -r ~/.local/state/nvim/swap/*'
 
