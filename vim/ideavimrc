@@ -139,7 +139,7 @@ map <leader>uy <Action>(RiderUnitTestRepeatPreviousRunAction)
 nmap tp <Action>(PinActiveEditorTab)
 
 " Github Copilot
-map <leader>ci <Action>(OpenInlineChatAction) " doesn't seem to work just now
+map <leader>ci <Action>(copilot.chat.inline) " doesn't seem to work just now
 map <leader>cc <Action>(copilot.chat.show)
 map <leader>co <Action>(copilot.openCopilot)
 map <leader>cs <Action>(copilot.openStatus)
