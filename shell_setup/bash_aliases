@@ -3,7 +3,7 @@ alias vi=nvim
 alias init-lua='vi ~/.config/nvim/init.lua'
 
 # Apt
-alias ='sudo apt update -y && sudo apt upgrade'
+alias upup='sudo apt update -y && sudo apt upgrade'
 
 # GIT
 # git checkout using fzf
