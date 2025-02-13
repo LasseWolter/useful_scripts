@@ -3,7 +3,7 @@ alias vi=nvim
 alias init-lua='vi ~/.config/nvim/init.lua'
 
 # Apt
-alias upup='sudo apt update -y && sudo apt upgrade'
+alias ='sudo apt update -y && sudo apt upgrade'
 
 # GIT
 # git checkout using fzf
@@ -73,8 +73,6 @@ alias tmr="tmux rename-window"
 # Display file size and sort by it
 alias lt='du -sh * | sort -h'
 
-# Use ugrep instead of grep - add to local_bash_aliases if you have ugrep installed
-# alias grep=ugrep
 
 alias xcc='xclip -select clipboard'
 # alias xcc='pbcopy' # for mac add this to your local_bash_aliases
@@ -88,3 +86,10 @@ alias csi=csharprepl
 # Create this file for local aliases that shouldn't be shared/are not compatible across machines
 # Everything defined in that file will overwrite aliases in this file
 source ~/.local_bash_aliases
+
+# Examples for local aliases
+
+# If you have ugrep installed
+# Use ugrep instead of grep - add to local_bash_aliases if you have ugrep installed
+# alias grep=ugrep
+# alias igrep='ugrep --query=1 --smart-case' # allows interactive searching
