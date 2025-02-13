@@ -21,6 +21,10 @@ let NERDTreeQuitOnOpen = 1  " close nerdtree on opening a file
 nmap <C-n> <Action>(EditorCloneCaretBelow)
 nmap <C-p> <Action>(EditorCloneCaretAbove)
 
+" select/yank a function
+nnoremap yaf va{okoy
+nnoremap vaf va{oko
+
 " remove all highlighted text + tab out and back in to remove multicursor
 nmap <esc> :noh<CR><Action>(EditorToggleColumnMode)<Action>(EditorToggleColumnMode)
 
