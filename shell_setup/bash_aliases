@@ -52,6 +52,7 @@ gitRmBranchesNotOnRemote() {
 # K8
 alias k=kubectl
 alias kns=kubens # requires kubens to be installed
+alias knary='kubectl get canaries'
 
 alias rmVimSwp='rm -r ~/.local/state/nvim/swap/*'
 
@@ -82,6 +83,9 @@ alias xcc='xclip -select clipboard'
 alias rmBinObj='find . -not \( -path "*/node_modules/*" \) -iname bin -o -iname obj | xargs rm -rf'
 # only works if csharprepl has been installed: https://github.com/waf/CSharpRepl?tab=readme-ov-file
 alias csi=csharprepl
+
+# PYTHON
+alias vac='source $(find -name '*venv')/bin/activate'
 
 # Create this file for local aliases that shouldn't be shared/are not compatible across machines
 # Everything defined in that file will overwrite aliases in this file
