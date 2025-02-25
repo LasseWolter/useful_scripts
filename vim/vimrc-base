@@ -64,3 +64,7 @@ nmap <C-c> "+y
 " tab navigation using vim motions
 nmap gl gt
 nmap gh gT
+
+" Increase/Decrease number under cursor
+nmap <C-.> <C-a>
+nmap <C-,> <C-x>

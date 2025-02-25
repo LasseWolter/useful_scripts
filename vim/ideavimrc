@@ -28,10 +28,6 @@ nnoremap vaf va{oko
 " remove all highlighted text + tab out and back in to remove multicursor
 nmap <esc> :noh<CR><Action>(EditorToggleColumnMode)<Action>(EditorToggleColumnMode)
 
-" Increase/Decrease number under cursor
-nmap <C-.> <C-a>
-nmap <C-,> <C-x>
-
 " Need to define this here because the .vimrc uses the overwindow search
 " which is currently not supported by the idea-plugin
 " see: https://github.com/AlexPl292/IdeaVim-EasyMotion#supported-commands
