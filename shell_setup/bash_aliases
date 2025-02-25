@@ -24,6 +24,7 @@ alias gll="git log --pretty='%C(yellow)%h %C(cyan)%cd %Cblue%aN%C(auto)%d %Crese
 alias glc='git log --format="%B"'
 alias gco='git checkout'
 alias gcm='git commit'
+alias gsl='git stash list'
 
 alias gcl='git config --list'
 alias gcll=gitLocalConfigs
