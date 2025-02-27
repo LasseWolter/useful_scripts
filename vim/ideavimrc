@@ -18,8 +18,8 @@ let NERDTreeQuitOnOpen = 1  " close nerdtree on opening a file
 "<<<<<Nerd tree settings----------------------
 
 " Multi caret based on lines (not words/matches)
-nmap <C-n> <Action>(EditorCloneCaretBelow)
-nmap <C-p> <Action>(EditorCloneCaretAbove)
+nmap <M-j> <Action>(EditorCloneCaretBelow)
+nmap <M-k> <Action>(EditorCloneCaretAbove)
 
 " select/yank a function
 nnoremap yaf va{okoy
