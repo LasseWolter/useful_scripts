@@ -144,3 +144,9 @@ map <leader>cc <Action>(copilot.chat.show)
 map <leader>co <Action>(copilot.openCopilot)
 map <leader>cs <Action>(copilot.openStatus)
 map <leader>cn <Action>(copilot.newChatSession)
+
+
+" FOR PYCHARM
+" for pycharm
+nmap [d <Action>(GotoPreviousError)
+nmap ]d <Action>(GotoNextError)
