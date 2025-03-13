@@ -98,7 +98,7 @@ nmap ]d <Action>(ReSharperGotoNextErrorInSolution)
 nmap [d <Action>(ReSharperGotoPrevErrorInSolution)
 
 nmap [f <Action>(GotoPreviousError)
-nmap ]f <Action>(GotoPreviousError)
+nmap ]f <Action>(GotoNextError)
 
 nmap ]m <Action>(MethodDown)
 nmap [m <Action>(MethodUp)
