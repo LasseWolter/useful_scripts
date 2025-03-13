@@ -97,6 +97,9 @@ nmap K <Action>(QuickJavaDoc)
 nmap ]d <Action>(ReSharperGotoNextErrorInSolution)
 nmap [d <Action>(ReSharperGotoPrevErrorInSolution)
 
+nmap <leader>j <Action>(ReSharperGotoNextErrorInSolution)
+nmap <leader>k <Action>(ReSharperGotoPrevErrorInSolution)
+
 nmap [f <Action>(GotoPreviousError)
 nmap ]f <Action>(GotoNextError)
 
