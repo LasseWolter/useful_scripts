@@ -21,10 +21,6 @@ let NERDTreeQuitOnOpen = 1  " close nerdtree on opening a file
 nmap <M-j> <Action>(EditorCloneCaretBelow)
 nmap <M-k> <Action>(EditorCloneCaretAbove)
 
-" select/yank a function
-nnoremap yaf va{okoy
-nnoremap vaf va{oko
-
 " remove all highlighted text + tab out and back in to remove multicursor
 nmap <esc> :noh<CR><Action>(EditorToggleColumnMode)<Action>(EditorToggleColumnMode)
 
@@ -83,6 +79,8 @@ map <leader-l> <C-^>
 map <C-k>l :set relativenumber!<Cr>
 map <C-k>p <Action>(CopyReferencePopupGroup)
 map <C-k>s <Action>(RiderManageRecentProjects)
+
+map <leader>n <Action>(ChangeIdeScale)
 
 " Yank to system clipboard
 map <leader>y "+y

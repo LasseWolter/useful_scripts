@@ -28,6 +28,10 @@ vmap <C-m> <C-a>
 " remap gm because g<C-m> doesn't work
 vmap gm g<C-a>)
 
+" select/yank a function in any language that uses {}
+nnoremap yaf va{okoy
+nnoremap vaf va{oko
+
 " doesn't work right now
 " nmap J mkJ`k
 
