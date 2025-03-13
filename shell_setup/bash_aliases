@@ -86,7 +86,7 @@ alias rmBinObj='find . -not \( -path "*/node_modules/*" \) -iname bin -o -iname 
 alias csi=csharprepl
 
 # PYTHON
-alias vac='source $(find -name '*venv')/bin/activate'
+alias vac='source $(find -name "*venv")/bin/activate'
 
 # Create this file for local aliases that shouldn't be shared/are not compatible across machines
 # Everything defined in that file will overwrite aliases in this file
