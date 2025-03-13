@@ -29,8 +29,8 @@ vmap <C-m> <C-a>
 vmap gm g<C-a>)
 
 " select/yank a function in any language that uses {}
-nnoremap yaf va{okoy
-nnoremap vaf va{oko
+nnoremap yaf va{o{jy
+nnoremap vaf va{o{j
 
 " doesn't work right now
 " nmap J mkJ`k
