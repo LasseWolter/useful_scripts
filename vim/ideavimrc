@@ -1,9 +1,9 @@
-" Decrease timeout to decrease wait time before certain binds are applied (e.g. '<' for indentation)
-set timeoutlen=100
-
 " Only source .vimrc-base - contains NO plugins
 source ~/.vimrc-base
 
+" Add secondary bind for indentation because of the delay for '<'
+nnoremap <M-,> <<
+nnoremap <M-.> >>
 
 " Vim Plugins
 Plug 'easymotion/vim-easymotion'
