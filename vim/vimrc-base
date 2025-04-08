@@ -76,3 +76,5 @@ nmap <C-,> <C-x>
 " Change indent with single key
 nnoremap > >>
 nnoremap < <<
+vnoremap > > gv
+vnoremap < < gv

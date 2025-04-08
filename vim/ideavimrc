@@ -3,7 +3,9 @@ source ~/.vimrc-base
 
 " Add secondary bind for indentation because of the delay for '<'
 nnoremap <M-,> <<
+vnoremap <M-,> < gv
 nnoremap <M-.> >>
+vnoremap <M-.> > gv
 
 " Vim Plugins
 Plug 'easymotion/vim-easymotion'
