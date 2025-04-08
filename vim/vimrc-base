@@ -72,3 +72,7 @@ nmap gh gT
 " Increase/Decrease number under cursor
 nmap <C-.> <C-a>
 nmap <C-,> <C-x>
+
+" Change indent with single key
+nnoremap > >>
+nnoremap < <<
