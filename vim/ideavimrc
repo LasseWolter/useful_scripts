@@ -1,4 +1,5 @@
-set timeoutlen = 10
+" Decrease timeout to decrease wait time before certain binds are applied (e.g. '<' for indentation)
+set timeoutlen=100
 
 " Only source .vimrc-base - contains NO plugins
 source ~/.vimrc-base
