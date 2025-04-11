@@ -3,11 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$( (
-        find ~/notes -type d;
-        find ~/.config/nvim -maxdepth 0 -type d;
-        find ~/.scripts -maxdepth 0 -type d; # single folder (without it's children) you want to add to the list
-        find ~/Work/Learning ~/Work/TowerManagement/ ~/Privat/ ~/Desktop/ -mindepth 1 -maxdepth 1 -type d) | fzf)
+    selected=$(~/.scripts/select-project)
 fi
 
 if [[ -z $selected ]]; then
