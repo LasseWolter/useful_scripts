@@ -57,9 +57,9 @@ alias knary='kubectl get canaries'
 
 alias rmVimSwp='rm -r ~/.local/state/nvim/swap/*'
 
-alias ls='ls -F'
-alias ll='ls -lha'
-alias la='ls -a'
+alias ls='ls -F --color=auto'
+alias ll='ls -lha --color=auto'
+alias la='ls -a --color=auto'
 
 
 # diff side by side with colour
