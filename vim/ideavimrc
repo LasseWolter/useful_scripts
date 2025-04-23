@@ -65,6 +65,11 @@ map <leader>dd <Action>(Debug)
 map <leader>dr <Action>(Run)
 map <leader>dc <Action>(Stop)
 
+vmap <M-j> <Action>(MoveLineDown)
+vmap <M-k> <Action>(MoveLineUp)
+
+vnoremap * y/<C-r>"<CR>
+
 " Map mb to open build-popup
 map <leader>mb <Action>(build)
 
