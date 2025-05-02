@@ -53,7 +53,14 @@ gitRmBranchesNotOnRemote() {
 # K8
 alias k=kubectl
 alias kns=kubens # requires kubens to be installed
-alias knary='kubectl get canaries'
+
+knary() {
+    kubectl get canaries $1 -w
+}
+
+koward() {
+    kubectl port-forward deployment/$1 8080:5000 -n $2
+}
 
 alias rmVimSwp='rm -r ~/.local/state/nvim/swap/*'
 
