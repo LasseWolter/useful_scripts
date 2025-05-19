@@ -59,6 +59,7 @@ knary() {
 }
 
 koward() {
+    (sleep 1; zen http://localhost:8080/swagger)&
     kubectl port-forward deployment/$1 8080:5000 -n $2
 }
 
