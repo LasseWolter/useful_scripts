@@ -12,6 +12,7 @@ export PATH="$PATH:/opt/mssql-tools18/bin"
 export PATH="$PATH:$HOME/.scripts"
 export PATH="$PATH:$HOME/.local/bin/pact/bin"
 export PATH="$PATH:$HOME/.yarn/bin/"
+export PATH="$PATH:$HOME/.dotnet/"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -101,9 +102,6 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch $(uname -m)"
 #
 source ~/.bash_aliases
-
-export PATH="/Users/${USER}/.scripts:${PATH}"
-export PATH="/Users/${USER}/.local/bin:${PATH}"
 
 bindkey -s ^f "tmux-sessionizer\n"
 
