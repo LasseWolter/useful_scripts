@@ -65,8 +65,10 @@ knary() {
 }
 
 koward() {
+    NAMESPACE="${2:-prod}"
+    PORT="${3:-5000}"
     (sleep 1; zen http://localhost:8080/swagger)&
-    kubectl port-forward deployment/$1 8080:5000 -n $2
+    kubectl port-forward deployment/$1 8080:$PORT -n $NAMESPACE
 }
 
 alias rmVimSwp='rm -r ~/.local/state/nvim/swap/*'
