@@ -18,6 +18,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Use nvim for  command editing in bash (e.g. when using fc or <C-x><C-e>)
+export EDITOR=nvim
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -115,4 +118,3 @@ eval "$(zoxide init --cmd cd zsh)"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export LS_COLORS="$LS_COLORS:di=01;34" # Example: bold blue directories
-
