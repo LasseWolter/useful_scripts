@@ -63,7 +63,7 @@ alias kns=kubens # requires kubens to be installed
 knary() {
     NAMESPACE="${2:-prod}"
     CMD="kubectl get canaries $1 -n $NAMESPACE -w"
-    echo "$CMD"
+    echo "$CMD\n"
     eval "$CMD"
 }
 
@@ -71,7 +71,7 @@ koward() {
     NAMESPACE="${2:-prod}"
     PORT="${3:-5000}"
     CMD="kubectl port-forward deployment/$1 8080:$PORT -n $NAMESPACE"
-    echo "$CMD"
+    echo "$CMD\n"
     (sleep 1; zen http://localhost:8080/swagger)&
     eval "$CMD"
 }
