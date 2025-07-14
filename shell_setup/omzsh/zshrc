@@ -14,9 +14,12 @@ export PATH="$PATH:$HOME/.local/bin/pact/bin"
 export PATH="$PATH:$HOME/.yarn/bin/"
 export PATH="$PATH:$HOME/.dotnet/"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# If nvm is installed update PATH and setup nvm
+if command -v nvm &> /dev/null; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
 
 # If pyenv is installed update path and initialise
 if command -v pyenv &> /dev/null; then
