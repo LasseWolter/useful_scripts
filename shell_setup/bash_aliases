@@ -30,6 +30,7 @@ alias gcl='git config --list'
 alias gcll=gitLocalConfigs
 
 # Can only be used if github CLI (gh) is installed
+gh(){ PAGER="" /usr/bin/gh "$@" } # don't use page for gh commands (like gh issue list)
 alias ghid='gh issue develop'
 alias ghpr='gh pr create'
 
@@ -59,6 +60,7 @@ hgrep() {
 # K8
 alias k=kubectl
 alias kns=kubens # requires kubens to be installed
+alias ktx=kubectx # requires kubens to be installed
 
 knary() {
     NAMESPACE="${2:-prod}"
