@@ -27,6 +27,12 @@ if command -v pyenv &> /dev/null; then
   eval "$(pyenv init -)"
 fi
 
+# Prevent gh cli from using a pager for commands like 'gh issue list'
+export GH_PAGER=
+
+# .NET
+export DOTNET_ROOT=$HOME/.dotnet
+
 # Use nvim for  command editing in bash (e.g. when using fc or <C-x><C-e>)
 export EDITOR=nvim
 
