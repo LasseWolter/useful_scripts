@@ -19,7 +19,7 @@ alias ga='git add'
 alias gaa='git add -A'
 alias gd='git diff'
 alias gdc='git diff --cached'
-alias gl="git log --pretty='%C(yellow)%h %C(cyan)%cd %Cblue%aN%C(auto)%d %Creset%s' --graph --date=relative --date-order -n8"
+alias gl="git --no-pager log --pretty='%C(yellow)%h %C(cyan)%cd %Cblue%aN%C(auto)%d %Creset%s' --graph --date=relative --date-order -n8"
 alias gll="git log --pretty='%C(yellow)%h %C(cyan)%cd %Cblue%aN%C(auto)%d %Creset%s' --graph --date=relative --date-order"
 alias glc='git log --format="%B"'
 alias gco='git checkout'
