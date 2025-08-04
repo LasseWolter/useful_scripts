@@ -122,7 +122,6 @@
 
     - name: Install Nerd Fonts (JetBrainsMono) on macOS
       shell: |
-        brew tap homebrew/cask-fonts
         brew install --cask font-jetbrains-mono-nerd-font
       when: ansible_os_family == 'Darwin'
       become: false
