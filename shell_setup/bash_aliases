@@ -53,7 +53,7 @@ gitRmBranchesNotOnRemote() {
 # Grep
 # [H]eader grep which always prints the first line - handy for tables where the first line contains column names
 hgrep() {
-    awk -v pattern="$1" 'NR==1 || $0 ~ pattern' | grep -B1 $1
+    awk -v pattern="$1" 'BEGIN {IGNORECASE=1} NR==1 || $0 ~ pattern' | grep -i -B1 $1
 }
 
 # K8
