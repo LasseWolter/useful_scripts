@@ -14,6 +14,7 @@
         name: zsh
         state: present
       when: ansible_os_family == 'Darwin'
+      become: false
 
     - name: Install git (Debian)
       apt:
@@ -26,6 +27,7 @@
         name: git
         state: present
       when: ansible_os_family == 'Darwin'
+      become: false
 
     - name: Install Oh My Zsh
       become: false
@@ -68,17 +70,31 @@
       args:
         creates: ~/.fzf
 
-    - name: Install zoxide
+    - name: Install zoxide (Debian)
       apt:
         name: zoxide
         state: present
       when: ansible_os_family == 'Debian'
 
-    - name: Install ugrep
+    - name: Install zoxide (macOS)
+      homebrew:
+        name: zoxide
+        state: present
+      when: ansible_os_family == 'Darwin'
+      become: false
+
+    - name: Install ugrep (Debian)
       apt:
         name: ugrep
         state: present
       when: ansible_os_family == 'Debian'
+
+    - name: Install ugrep (macOS)
+      homebrew:
+        name: ugrep
+        state: present
+      when: ansible_os_family == 'Darwin'
+      become: false
 
     - name: Install Nerd Fonts (JetBrainsMono)
       become: yes
@@ -89,7 +105,14 @@
         fc-cache -fv
       args:
         creates: ~/.local/share/fonts/JetBrainsMonoNerdFont-Regular.ttf
-        
+
+    - name: Install Nerd Fonts (JetBrainsMono) on macOS
+      shell: |
+        brew tap homebrew/cask-fonts
+        brew install --cask font-jetbrains-mono-nerd-font
+      when: ansible_os_family == 'Darwin'
+      become: false
+
     - name: Install Powerlevel10k theme for Oh My Zsh
       git:
         repo: https://github.com/romkatv/powerlevel10k.git
