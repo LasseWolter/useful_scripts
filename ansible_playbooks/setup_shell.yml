@@ -96,23 +96,6 @@
       when: ansible_os_family == 'Darwin'
       become: false
 
-    - name: Install Nerd Fonts (JetBrainsMono)
-      become: yes
-      shell: |
-        mkdir -p ~/.local/share/fonts
-        wget -O /tmp/JetBrainsMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip
-        unzip -o /tmp/JetBrainsMono.zip -d ~/.local/share/fonts/
-        fc-cache -fv
-      args:
-        creates: ~/.local/share/fonts/JetBrainsMonoNerdFont-Regular.ttf
-
-    - name: Install Nerd Fonts (JetBrainsMono) on macOS
-      shell: |
-        brew tap homebrew/cask-fonts
-        brew install --cask font-jetbrains-mono-nerd-font
-      when: ansible_os_family == 'Darwin'
-      become: false
-
     - name: Install Powerlevel10k theme for Oh My Zsh
       git:
         repo: https://github.com/romkatv/powerlevel10k.git
@@ -125,3 +108,21 @@
         dest: ~/.p10k.zsh
         state: link
         force: yes
+
+    - name: Install Nerd Fonts (JetBrainsMono)
+      become: yes
+      shell: |
+        mkdir -p ~/.local/share/fonts
+        wget -O /tmp/JetBrainsMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip
+        unzip -o /tmp/JetBrainsMono.zip -d ~/.local/share/fonts/
+        fc-cache -fv
+      when: ansible_os_family == 'Debian'
+      args:
+        creates: ~/.local/share/fonts/JetBrainsMonoNerdFont-Regular.ttf
+
+    - name: Install Nerd Fonts (JetBrainsMono) on macOS
+      shell: |
+        brew tap homebrew/cask-fonts
+        brew install --cask font-jetbrains-mono-nerd-font
+      when: ansible_os_family == 'Darwin'
+      become: false
