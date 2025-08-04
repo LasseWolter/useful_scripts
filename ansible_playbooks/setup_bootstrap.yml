@@ -1,0 +1,10 @@
+---
+- name: Bootstrap setup (clone useful_scripts repo)
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Clone useful_scripts repo
+      git:
+        repo: https://github.com/LasseWolter/useful_scripts
+        dest: ~/Privat/useful_scripts
+        update: yes

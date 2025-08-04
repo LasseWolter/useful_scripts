@@ -1,0 +1,36 @@
+---
+- name: Tmux setup
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Install tmux
+      apt:
+        name: tmux
+        state: present
+      when: ansible_os_family == 'Debian'
+
+    - name: Install tmux plugin manager (tpm)
+      become: false
+      shell: |
+        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+      args:
+        creates: ~/.tmux/plugins/tpm
+
+    - name: Ensure ~/.config/tmux directory exists
+      file:
+        path: ~/.config/tmux
+        state: directory
+        mode: '0755'
+
+    - name: Symlink custom tmux.conf
+      file:
+        src: ~/Privat/useful_scripts/tmux/tmux.conf
+        dest: ~/.config/tmux/tmux.conf
+        state: link
+        force: yes
+
+    - name: Install tmux plugins with tpm
+      become: false
+      shell: ~/.tmux/plugins/tpm/bin/install_plugins
+      args:
+        creates: ~/.tmux/plugins/tpm/bin/install_plugins

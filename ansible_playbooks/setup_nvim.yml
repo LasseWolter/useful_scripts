@@ -1,0 +1,31 @@
+---
+- name: Neovim setup
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Download latest Neovim AppImage
+      become: false
+      shell: |
+        mkdir -p ~/.local/bin
+        wget -O ~/.local/bin/nvim https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+        chmod +x ~/.local/bin/nvim
+      args:
+        creates: ~/.local/bin/nvim
+
+    - name: Clone kickstart.nvim repo
+      git:
+        repo: https://github.com/LasseWolter/kickstart.nvim
+        dest: ~/.config/nvim
+        update: yes
+
+    - name: Ensure nvim config directory exists
+      file:
+        path: ~/.config/nvim
+        state: directory
+        mode: '0755'
+
+    - name: Install ripgrep (required for Telescope)
+      apt:
+        name: ripgrep
+        state: present
+      when: ansible_os_family == 'Debian'

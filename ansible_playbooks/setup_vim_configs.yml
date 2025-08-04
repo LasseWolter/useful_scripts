@@ -1,0 +1,19 @@
+---
+- name: Vim and IdeaVim setup
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Symlink custom ideavimrc
+      file:
+        src: ~/Privat/useful_scripts/vim/ideavimrc
+        dest: ~/.ideavimrc
+        state: link
+        force: yes
+
+    - name: Symlink custom vimrc-base
+      file:
+        src: ~/Privat/useful_scripts/vim/vimrc-base
+        dest: ~/.vimrc-base
+        state: link
+        force: yes
+

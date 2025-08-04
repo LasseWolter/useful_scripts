@@ -1,0 +1,79 @@
+---
+- name: Shell and CLI tools setup (Zsh, Oh My Zsh, bash_aliases, fzf, zoxide, ugrep, Nerd Font)
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Install zsh
+      apt:
+        name: zsh
+        state: present
+      when: ansible_os_family == 'Debian'
+
+    - name: Install git
+      apt:
+        name: git
+        state: present
+      when: ansible_os_family == 'Debian'
+
+    - name: Install Oh My Zsh
+      become: false
+      shell: |
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      args:
+        creates: ~/.oh-my-zsh
+
+    - name: Symlink custom zshrc
+      file:
+        src: ~/Privat/useful_scripts/shell_setup/omzsh/zshrc
+        dest: ~/.zshrc
+        state: link
+        force: yes
+
+    - name: Symlink custom p10k.zsh
+      file:
+        src: ~/Privat/useful_scripts/shell_setup/omzsh/p10k.zsh
+        dest: ~/.p10k.zsh
+        state: link
+        force: yes
+
+    - name: Symlink custom bash_aliases
+      file:
+        src: ~/Privat/useful_scripts/shell_setup/bash_aliases
+        dest: ~/.bash_aliases
+        state: link
+        force: yes
+
+    - name: Set zsh as default shell
+      user:
+        name: "{{ ansible_user_id }}"
+        shell: /usr/bin/zsh
+
+    - name: Install fzf (latest from repo)
+      become: false
+      shell: |
+        git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+        ~/.fzf/install --all
+      args:
+        creates: ~/.fzf
+
+    - name: Install zoxide
+      apt:
+        name: zoxide
+        state: present
+      when: ansible_os_family == 'Debian'
+
+    - name: Install ugrep
+      apt:
+        name: ugrep
+        state: present
+      when: ansible_os_family == 'Debian'
+
+    - name: Install Nerd Fonts (JetBrainsMono)
+      become: yes
+      shell: |
+        mkdir -p ~/.local/share/fonts
+        wget -O /tmp/JetBrainsMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip
+        unzip -o /tmp/JetBrainsMono.zip -d ~/.local/share/fonts/
+        fc-cache -fv
+      args:
+        creates: ~/.local/share/fonts/JetBrainsMonoNerdFont-Regular.ttf
