@@ -21,7 +21,9 @@ export NVM_DIR="$HOME/.nvm"
 
 # pyenv configs
 export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
+if command -v pyenv &> /dev/null; then
+  eval "$(pyenv init -)"
+fi
 
 # Prevent gh cli from using a pager for commands like 'gh issue list'
 export GH_PAGER=
