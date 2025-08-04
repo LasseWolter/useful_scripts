@@ -1,16 +1,15 @@
 ---
 - name: Tmux setup
   hosts: localhost
-  become: yes
   tasks:
     - name: Install tmux
+      become: yes
       apt:
         name: tmux
         state: present
       when: ansible_os_family == 'Debian'
 
     - name: Install tmux plugin manager (tpm)
-      become: false
       shell: |
         git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
       args:
@@ -30,7 +29,6 @@
         force: yes
 
     - name: Install tmux plugins with tpm
-      become: false
       shell: ~/.tmux/plugins/tpm/bin/install_plugins
       args:
         creates: ~/.tmux/plugins/tpm/bin/install_plugins

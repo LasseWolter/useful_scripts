@@ -1,7 +1,6 @@
 ---
 - name: Create ~/.scripts folder
   hosts: localhost
-  become: yes
   tasks:
     - name: Ensure ~/.scripts directory exists
       file:

@@ -1,7 +1,6 @@
 ---
 - name: Bootstrap setup (clone useful_scripts repo)
   hosts: localhost
-  become: yes
   tasks:
     - name: Clone useful_scripts repo
       git:

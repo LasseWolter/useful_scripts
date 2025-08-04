@@ -1,7 +1,6 @@
 ---
 - name: Vim and IdeaVim setup
   hosts: localhost
-  become: yes
   tasks:
     - name: Symlink custom ideavimrc
       file:

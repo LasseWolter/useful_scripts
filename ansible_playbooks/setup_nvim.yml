@@ -1,7 +1,6 @@
 ---
 - name: Neovim setup
   hosts: localhost
-  become: yes
   tasks:
     - name: Download latest Neovim AppImage
       become: false
@@ -25,6 +24,7 @@
         mode: '0755'
 
     - name: Install ripgrep (required for Telescope)
+      become: yes
       apt:
         name: ripgrep
         state: present
