@@ -7,7 +7,7 @@ else
         find ~/Notes -type d;
         find ~/.config/nvim -maxdepth 0 -type d; 
         find ~/.scripts -maxdepth 0 -type d; # single folder (without it's children) you want to add to the list
-        find ~/Work/Learning ~/Work/igs-repos// ~/Privat/ ~/Desktop/ -mindepth 1 -maxdepth 1 -type d) | fzf --tmux=80%,80%)
+        find ~/Work/ ~/Privat/ ~/Desktop/ -mindepth 1 -maxdepth 2 -type d) | fzf --tmux=80%,80%)
 fi
 
 if [[ -z $selected ]]; then
