@@ -1,9 +1,9 @@
 ---
 - name: Shell and CLI tools setup (Zsh, Oh My Zsh, bash_aliases, fzf, zoxide, ugrep, Nerd Font)
   hosts: localhost
+  become: yes
   tasks:
     - name: Install zsh (Debian)
-      become: yes
       apt:
         name: zsh
         state: present
@@ -14,9 +14,9 @@
         name: zsh
         state: present
       when: ansible_os_family == 'Darwin'
+      become: false
 
     - name: Install git (Debian)
-      become: yes
       apt:
         name: git
         state: present
@@ -27,8 +27,10 @@
         name: git
         state: present
       when: ansible_os_family == 'Darwin'
+      become: false
 
     - name: Install Oh My Zsh
+      become: false
       shell: |
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
       args:
@@ -61,6 +63,7 @@
       when: ansible_os_family == 'Darwin'
 
     - name: Install fzf (latest from repo)
+      become: false
       shell: |
         git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
         ~/.fzf/install --all
@@ -78,6 +81,7 @@
         name: zoxide
         state: present
       when: ansible_os_family == 'Darwin'
+      become: false
 
     - name: Install ugrep (Debian)
       apt:
@@ -90,6 +94,7 @@
         name: ugrep
         state: present
       when: ansible_os_family == 'Darwin'
+      become: false
 
     - name: Install Nerd Fonts (JetBrainsMono)
       become: yes
@@ -106,6 +111,7 @@
         brew tap homebrew/cask-fonts
         brew install --cask font-jetbrains-mono-nerd-font
       when: ansible_os_family == 'Darwin'
+      become: false
 
     - name: Install Powerlevel10k theme for Oh My Zsh
       git:
