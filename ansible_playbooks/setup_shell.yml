@@ -3,17 +3,29 @@
   hosts: localhost
   become: yes
   tasks:
-    - name: Install zsh
+    - name: Install zsh (Debian)
       apt:
         name: zsh
         state: present
       when: ansible_os_family == 'Debian'
 
-    - name: Install git
+    - name: Install zsh (Mac)
+      homebrew:
+        name: zsh
+        state: present
+      when: ansible_os_family == 'Darwin'
+
+    - name: Install git (Debian)
       apt:
         name: git
         state: present
       when: ansible_os_family == 'Debian'
+
+    - name: Install git (Mac)
+      homebrew:
+        name: git
+        state: present
+      when: ansible_os_family == 'Darwin'
 
     - name: Install Oh My Zsh
       become: false
@@ -43,10 +55,17 @@
         state: link
         force: yes
 
-    - name: Set zsh as default shell
+    - name: Set zsh as default shell (Debian)
       user:
         name: "{{ ansible_user_id }}"
         shell: /usr/bin/zsh
+      when: ansible_os_family == 'Debian'
+
+    - name: Set zsh as default shell (Mac)
+      user:
+        name: "{{ ansible_user_id }}"
+        shell: /bin/zsh
+      when: ansible_os_family == 'Darwin'
 
     - name: Install fzf (latest from repo)
       become: false
