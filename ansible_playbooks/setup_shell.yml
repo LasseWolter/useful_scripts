@@ -14,7 +14,6 @@
         name: zsh
         state: present
       when: ansible_os_family == 'Darwin'
-      become: false
 
     - name: Install git (Debian)
       become: yes
@@ -28,10 +27,8 @@
         name: git
         state: present
       when: ansible_os_family == 'Darwin'
-      become: false
 
     - name: Install Oh My Zsh
-      become: false
       shell: |
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
       args:
@@ -64,7 +61,6 @@
       when: ansible_os_family == 'Darwin'
 
     - name: Install fzf (latest from repo)
-      become: false
       shell: |
         git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
         ~/.fzf/install --all
@@ -89,7 +85,6 @@
         name: zoxide
         state: present
       when: ansible_os_family == 'Darwin'
-      become: false
 
     - name: Install ugrep (Debian)
       become: yes
@@ -103,7 +98,6 @@
         name: ugrep
         state: present
       when: ansible_os_family == 'Darwin'
-      become: false
 
     - name: Install Powerlevel10k theme for Oh My Zsh
       git:
@@ -133,5 +127,4 @@
       shell: |
         brew install --cask font-jetbrains-mono-nerd-font
       when: ansible_os_family == 'Darwin'
-      become: false
 
