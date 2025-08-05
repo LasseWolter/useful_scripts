@@ -71,6 +71,12 @@
       args:
         creates: ~/.fzf
 
+    - name: Install zsh-autosuggestions plugin
+      git:
+        repo: https://github.com/zsh-users/zsh-autosuggestions.git
+        dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+        update: yes
+
     - name: Install zoxide (Debian)
       become: yes
       apt:
@@ -128,3 +134,4 @@
         brew install --cask font-jetbrains-mono-nerd-font
       when: ansible_os_family == 'Darwin'
       become: false
+
