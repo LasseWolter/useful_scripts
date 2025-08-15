@@ -30,8 +30,9 @@ alias gcl='git config --list'
 alias gcll=gitLocalConfigs
 
 # Can only be used if github CLI (gh) is installed
-alias ghid='gh issue develop'
 alias ghpr='gh pr create'
+alias ghb='gh browse'
+ghid(){gh issue develop $1 -c}
 
 restoreMatching() {
     git restore $(find . -name "$1" | grep -v 'node_modules')
