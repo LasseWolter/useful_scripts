@@ -4,6 +4,24 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Option+number -> option+number (instead of special chars)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "1",
+                                    "modifiers": { "mandatory": ["option"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "1",
+                                        "modifiers": ["option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "ctrl+k => cmd+k",
                         "manipulators": [
                             {
@@ -1610,7 +1628,7 @@
                         ]
                     },
                     {
-                        "description": "Option+Shift+F4 => Cmd+Q (Close Application)",
+                        "description": "Option+F4 => Cmd+Q (Close Application)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1646,7 +1664,7 @@
                                 ],
                                 "from": {
                                     "key_code": "f4",
-                                    "modifiers": { "mandatory": ["left_option", "shift"] }
+                                    "modifiers": { "mandatory": ["left_option"] }
                                 },
                                 "to": [
                                     {
@@ -1659,7 +1677,7 @@
                         ]
                     },
                     {
-                        "description": "option+F4 => Cmd+W (Close Window)",
+                        "description": "option+shift+F4 => Cmd+W (Close Window)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1739,7 +1757,7 @@
                                 ],
                                 "from": {
                                     "key_code": "f4",
-                                    "modifiers": { "mandatory": ["left_option"] }
+                                    "modifiers": { "mandatory": ["left_option", "shift"] }
                                 },
                                 "to": [
                                     {
