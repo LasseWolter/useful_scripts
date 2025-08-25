@@ -1,0 +1,36 @@
+{
+  "1e86cf37-a127-4f24-b919-d265b5ce29a0": {
+    "id": "1e86cf37-a127-4f24-b919-d265b5ce29a0",
+    "name": "Cleaner Extensions",
+    "description": "Clean up the Unified Extension Menu, grid the buttons, show the puzzle button only on hover.. or hide it completely",
+    "homepage": "",
+    "style": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/1e86cf37-a127-4f24-b919-d265b5ce29a0/chrome.css",
+    "readme": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/1e86cf37-a127-4f24-b919-d265b5ce29a0/readme.md",
+    "image": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/1e86cf37-a127-4f24-b919-d265b5ce29a0/image.png",
+    "author": "KiKaraage",
+    "version": "2.2",
+    "preferences": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/1e86cf37-a127-4f24-b919-d265b5ce29a0/preferences.json",
+    "tags": [],
+    "createdAt": "2024-09-03",
+    "updatedAt": "2025-06-11",
+    "enabled": true
+  },
+  "ad97bb70-0066-4e42-9b5f-173a5e42c6fc": {
+    "id": "ad97bb70-0066-4e42-9b5f-173a5e42c6fc",
+    "name": "SuperPins",
+    "description": "This Zen Mod enhances pinned tabs/Essentials, by making some UI/UX changes.",
+    "homepage": "https://github.com/CosmoCreeper/Zen-Themes/tree/main/SuperPins",
+    "style": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/ad97bb70-0066-4e42-9b5f-173a5e42c6fc/chrome.css",
+    "readme": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/ad97bb70-0066-4e42-9b5f-173a5e42c6fc/readme.md",
+    "image": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/ad97bb70-0066-4e42-9b5f-173a5e42c6fc/image.png",
+    "author": "CosmoCreeper",
+    "version": "1.5.7",
+    "preferences": "https://raw.githubusercontent.com/zen-browser/theme-store/main/themes/ad97bb70-0066-4e42-9b5f-173a5e42c6fc/preferences.json",
+    "tags": [
+      "tabs"
+    ],
+    "createdAt": "2024-08-28",
+    "updatedAt": "2025-07-22",
+    "enabled": true
+  }
+}

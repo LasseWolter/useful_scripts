@@ -3,10 +3,9 @@
   hosts: localhost
   tasks:
     - name: Download latest Neovim AppImage
-      become: false
       shell: |
         mkdir -p ~/.local/bin
-        wget -O ~/.local/bin/nvim https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+        wget -LO ~/.local/bin/nvim https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
         chmod +x ~/.local/bin/nvim
       args:
         creates: ~/.local/bin/nvim
@@ -27,5 +26,14 @@
       become: yes
       apt:
         name: ripgrep
+        state: present
+      when: ansible_os_family == 'Debian'
+
+    - name: Install common Neovim dependencies (e.g. for clipboard)
+      become: yes
+      apt:
+        name:
+          - xclip
+          - gcc
         state: present
       when: ansible_os_family == 'Debian'

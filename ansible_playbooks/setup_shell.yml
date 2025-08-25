@@ -14,7 +14,6 @@
         name: zsh
         state: present
       when: ansible_os_family == 'Darwin'
-      become: false
 
     - name: Install git (Debian)
       become: yes
@@ -28,10 +27,8 @@
         name: git
         state: present
       when: ansible_os_family == 'Darwin'
-      become: false
 
     - name: Install Oh My Zsh
-      become: false
       shell: |
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
       args:
@@ -51,7 +48,14 @@
         state: link
         force: yes
 
+    - name: Create local_bash_aliases file
+      file:
+        path: ~/.local_bash_aliases
+        state: touch
+        mode: '0600'
+
     - name: Set zsh as default shell (Debian)
+      become: yes
       user:
         name: "{{ ansible_user_id }}"
         shell: /usr/bin/zsh
@@ -64,12 +68,17 @@
       when: ansible_os_family == 'Darwin'
 
     - name: Install fzf (latest from repo)
-      become: false
       shell: |
         git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
         ~/.fzf/install --all
       args:
         creates: ~/.fzf
+
+    - name: Install zsh-autosuggestions plugin
+      git:
+        repo: https://github.com/zsh-users/zsh-autosuggestions.git
+        dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+        update: yes
 
     - name: Install zoxide (Debian)
       become: yes
@@ -83,7 +92,6 @@
         name: zoxide
         state: present
       when: ansible_os_family == 'Darwin'
-      become: false
 
     - name: Install ugrep (Debian)
       become: yes
@@ -97,7 +105,6 @@
         name: ugrep
         state: present
       when: ansible_os_family == 'Darwin'
-      become: false
 
     - name: Install Powerlevel10k theme for Oh My Zsh
       git:
@@ -127,4 +134,4 @@
       shell: |
         brew install --cask font-jetbrains-mono-nerd-font
       when: ansible_os_family == 'Darwin'
-      become: false
+
