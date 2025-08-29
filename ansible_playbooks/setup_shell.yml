@@ -78,7 +78,7 @@
       git:
         repo: https://github.com/zsh-users/zsh-autosuggestions.git
         dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-        update: yes
+        update: no
 
     - name: Install zoxide (Debian)
       become: yes
@@ -110,7 +110,7 @@
       git:
         repo: https://github.com/romkatv/powerlevel10k.git
         dest: ~/.oh-my-zsh/custom/themes/powerlevel10k
-        update: yes
+        update: no
 
     - name: Ensure p10k.zsh config is symlinked
       file:
