@@ -122,4 +122,4 @@ source ~/.local_bash_aliases
 # If you have ugrep installed
 # Use ugrep instead of grep - add to local_bash_aliases if you have ugrep installed
 # alias grep=ugrep
-# alias igrep='ugrep --query=1 --smart-case' # allows interactive searching
+alias igrep='ugrep --query=1 --smart-case' # allows interactive searching
