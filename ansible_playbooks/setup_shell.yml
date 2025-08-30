@@ -15,19 +15,6 @@
         state: present
       when: ansible_os_family == 'Darwin'
 
-    - name: Install git (Debian)
-      become: yes
-      apt:
-        name: git
-        state: present
-      when: ansible_os_family == 'Debian'
-
-    - name: Install git (Mac)
-      homebrew:
-        name: git
-        state: present
-      when: ansible_os_family == 'Darwin'
-
     - name: Install Oh My Zsh
       shell: |
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
