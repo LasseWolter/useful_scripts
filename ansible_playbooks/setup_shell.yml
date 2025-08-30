@@ -35,11 +35,17 @@
         state: link
         force: yes
 
-    - name: Create local_bash_aliases file
+    - name: Check if local_bash_aliases exists
+      stat:
+        path: ~/.local_bash_aliases
+      register: bash_aliases_file
+
+    - name: Create local_bash_aliases file if not exists
       file:
         path: ~/.local_bash_aliases
         state: touch
         mode: '0600'
+      when: not bash_aliases_file.stat.exists
 
     - name: Set zsh as default shell (Debian)
       become: yes
