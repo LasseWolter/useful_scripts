@@ -15,19 +15,6 @@
         state: present
       when: ansible_os_family == 'Darwin'
 
-    - name: Install git (Debian)
-      become: yes
-      apt:
-        name: git
-        state: present
-      when: ansible_os_family == 'Debian'
-
-    - name: Install git (Mac)
-      homebrew:
-        name: git
-        state: present
-      when: ansible_os_family == 'Darwin'
-
     - name: Install Oh My Zsh
       shell: |
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -48,11 +35,17 @@
         state: link
         force: yes
 
-    - name: Create local_bash_aliases file
+    - name: Check if local_bash_aliases exists
+      stat:
+        path: ~/.local_bash_aliases
+      register: bash_aliases_file
+
+    - name: Create local_bash_aliases file if not exists
       file:
         path: ~/.local_bash_aliases
         state: touch
         mode: '0600'
+      when: not bash_aliases_file.stat.exists
 
     - name: Set zsh as default shell (Debian)
       become: yes
@@ -78,7 +71,7 @@
       git:
         repo: https://github.com/zsh-users/zsh-autosuggestions.git
         dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-        update: yes
+        update: no
 
     - name: Install zoxide (Debian)
       become: yes
@@ -110,7 +103,7 @@
       git:
         repo: https://github.com/romkatv/powerlevel10k.git
         dest: ~/.oh-my-zsh/custom/themes/powerlevel10k
-        update: yes
+        update: no
 
     - name: Ensure p10k.zsh config is symlinked
       file:

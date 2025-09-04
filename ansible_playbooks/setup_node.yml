@@ -1,0 +1,13 @@
+---
+- name: Install and set up nvm to manage node envs
+  hosts: localhost
+  tasks:
+    - name: Install nvm
+      shell: |
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+    - name: Install latest node version using nvm
+      shell: |
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+        nvm install node
+

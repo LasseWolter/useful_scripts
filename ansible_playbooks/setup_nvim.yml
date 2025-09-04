@@ -14,7 +14,7 @@
       git:
         repo: https://github.com/LasseWolter/kickstart.nvim
         dest: ~/.config/nvim
-        update: yes
+        update: no
 
     - name: Ensure nvim config directory exists
       file:

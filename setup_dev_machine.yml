@@ -1,7 +1,7 @@
 ---
-- import_playbook: ansible_playbooks/setup_bootstrap.yml
 - import_playbook: ansible_playbooks/setup_shell.yml
 - import_playbook: ansible_playbooks/setup_vim_configs.yml
 - import_playbook: ansible_playbooks/setup_tmux.yml
 - import_playbook: ansible_playbooks/setup_nvim.yml
 - import_playbook: ansible_playbooks/setup_scripts_folder.yml
+- import_playbook: ansible_playbooks/setup_node.yml
