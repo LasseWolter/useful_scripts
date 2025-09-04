@@ -32,6 +32,7 @@ alias gcll=gitLocalConfigs
 # Can only be used if github CLI (gh) is installed
 alias ghpr='gh pr create'
 alias ghb='gh browse'
+alias ghil='gh issue list'
 ghid(){gh issue develop $1 -c}
 
 restoreMatching() {
@@ -57,6 +58,12 @@ hgrep() {
     awk -v pattern="$1" 'BEGIN {IGNORECASE=1} NR==1 || $0 ~ pattern' | grep -i -B1 $1
 }
 
+# az cli
+kvlist() {az keyvault secret list --vault-name kv-agri-prod-ukw --query "[?contains(name,'$1')].name"}
+kvshow() {az keyvault secret show --name $1 --vault-name kv-agri-prod-ukw}
+alias kvl=kvlist
+alias kvs=kvshow
+
 # K8
 alias k=kubectl
 alias kns=kubens # requires kubens to be installed
@@ -66,6 +73,13 @@ alias khw='k get hw | hgrep'
 knary() {
     NAMESPACE="${2:-prod}"
     CMD="kubectl get canaries $1 -n $NAMESPACE -w"
+    echo "$CMD\n"
+    eval "$CMD"
+}
+
+flagger-knary() {
+    NAMESPACE="${2:-prod}"
+    CMD="kubectl logs deployment/flagger -n flagger --tail 1000 -f | grep $1.$NAMESPACE"
     echo "$CMD\n"
     eval "$CMD"
 }
