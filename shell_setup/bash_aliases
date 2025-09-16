@@ -58,6 +58,8 @@ hgrep() {
     awk -v pattern="$1" 'BEGIN {IGNORECASE=1} NR==1 || $0 ~ pattern' | grep -i -B1 $1
 }
 
+sgrep() { grep -A5 -B5 "$1" }
+
 # az cli
 kvlist() {az keyvault secret list --vault-name kv-agri-prod-ukw --query "[?contains(name,'$1')].name"}
 kvshow() {az keyvault secret show --name $1 --vault-name kv-agri-prod-ukw}
