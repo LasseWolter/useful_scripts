@@ -1,9 +1,9 @@
 # useful_scripts
 
-A collection of scripts, dotfiles, and playbooks I use to bootstrap development environments across Linux, macOS, and Windows.
+A collection of scripts, dotfiles, and playbooks I use to bootstrap development environments across Linux, macOS, and Windows (well, Windows not really, only if I'm forced to)
 
 ## Repo structure
-- `ansible_playbooks/` – playbooks for setting up shells, vim/nvim, tmux, node, and copying scripts.
+- `ansible_playbooks/` – playbooks for setting up shells, vim/nvim, tmux, node, and copying scripts from other folders in this repo
 - `create_hotspot_on_linux/` – configuration and notes for running a Linux Wi‑Fi hotspot.
 - `linux-setup/` – personal setup notes for Linux desktops.
 - `mac_setup/` – macOS-specific tweaks and utility scripts.
@@ -17,12 +17,15 @@ A collection of scripts, dotfiles, and playbooks I use to bootstrap development 
 ## Quick start
 ### Configure a dev machine with Ansible
 1. Install Ansible on your target machine.
-2. Clone this repository to the machine.
-3. Run the top-level playbook to install shell tooling, editors, tmux, and node:
+   - Linux: `sudo apt install ansible`
+   - Mac: `brew install ansible`
+   - Windows: Please don't, thx
+2. Clone this repository to the machine
+   - `git clone https://github.com/LasseWolter/useful_scripts.git`
+3. Run the top-level playbook to install shell tooling, editors, tmux, node, etc:
    ```bash
    ansible-playbook setup_dev_machine.yml
    ```
-4. Adjust individual playbooks in `ansible_playbooks/` if you want to run only part of the setup.
 
 ### Using individual scripts
 - Scripts in `random_scripts/` are standalone helpers. Inspect each script to confirm dependencies (e.g., `ffmpeg` for video tools) before running.
