@@ -1,0 +1,54 @@
+---
+- name: Install Alacritty terminal emulator https://alacritty.org/
+  hosts: localhost
+  tasks:
+    - name: Install Rust toolchain (cargo)
+      shell: |
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+      args:
+        creates: ~/.cargo/bin/cargo
+
+    - name: Install Alacritty deps (Debian)
+      become: yes
+      apt:
+        name:
+          - cmake
+          - g++
+          - pkg-config
+          - libfontconfig1-dev
+          - libxcb-xfixes0-dev
+          - libxkbcommon-dev
+          - python3
+        state: present
+      when: ansible_os_family == 'Debian'
+
+    - name: Install Alacritty via cargo
+      shell: |
+        ~/.cargo/bin/cargo install alacritty --locked
+      args:
+        creates: ~/.cargo/bin/alacritty
+      environment:
+        PATH: "{{ ansible_env.HOME }}/.cargo/bin:{{ ansible_env.PATH }}"
+
+    - name: Get alacritty icon for desktop entry (Debian)
+      shell: |
+        mkdir -p ~/.local/share/alacritty
+        wget https://github.com/dfl0/mac-icons/raw/main/alacritty/icons/smooth/alacritty_smooth_full.png -O ~/.local/share/alacritty/icon.png
+      args:
+        creates: ~/.local/share/alacritty/logo.pnhg
+      when: ansible_os_family == 'Debian'
+
+    - name: Create Alacritty desktop file (Debian)
+      copy:
+        dest: "{{ ansible_env.HOME }}/.local/share/applications/alacritty.desktop"
+        mode: '0644'
+        content: |
+          [Desktop Entry]
+          Name=Alacritty
+          Comment=Alacritty Terminal Emulator
+          Exec={{ ansible_env.HOME }}/.cargo/bin/alacritty
+          Icon={{ ansible_env.HOME }}/.local/share/alacritty/icon.png
+          Terminal=false
+          Type=Application
+          Categories=System;TerminalEmulator;
+      when: ansible_os_family == 'Debian'
