@@ -127,17 +127,3 @@
         brew install --cask font-jetbrains-mono-nerd-font
       when: ansible_os_family == 'Darwin'
 
-    - name: Install Rust toolchain (cargo)
-      shell: |
-        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-      args:
-        creates: ~/.cargo/bin/cargo
-
-    - name: Install Alacritty via cargo
-      shell: |
-        ~/.cargo/bin/cargo install alacritty --locked
-      args:
-        creates: ~/.cargo/bin/alacritty
-      environment:
-        PATH: "{{ ansible_env.HOME }}/.cargo/bin:{{ ansible_env.PATH }}"
-
