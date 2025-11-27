@@ -1,1 +1,33 @@
 # useful_scripts
+
+A collection of scripts, dotfiles, and playbooks I use to bootstrap development environments across Linux, macOS, and Windows.
+
+## Repo structure
+- `ansible_playbooks/` – playbooks for setting up shells, vim/nvim, tmux, node, and copying scripts.
+- `create_hotspot_on_linux/` – configuration and notes for running a Linux Wi‑Fi hotspot.
+- `linux-setup/` – personal setup notes for Linux desktops.
+- `mac_setup/` – macOS-specific tweaks and utility scripts.
+- `random_scripts/` – assorted helper scripts (video conversion, display tweaks, etc.).
+- `shell_setup/` – shell configuration files (bash/zsh aliases, profiles).
+- `tmux/` – tmux configuration and helper scripts for session/project selection.
+- `vim/` – vim/neovim configuration files and installation helpers.
+- `windows/` – PowerShell one-liners and notes.
+- `zen-setup/` – configuration exports and notes for the Zen browser.
+
+## Quick start
+### Configure a dev machine with Ansible
+1. Install Ansible on your target machine.
+2. Clone this repository to the machine.
+3. Run the top-level playbook to install shell tooling, editors, tmux, and node:
+   ```bash
+   ansible-playbook setup_dev_machine.yml
+   ```
+4. Adjust individual playbooks in `ansible_playbooks/` if you want to run only part of the setup.
+
+### Using individual scripts
+- Scripts in `random_scripts/` are standalone helpers. Inspect each script to confirm dependencies (e.g., `ffmpeg` for video tools) before running.
+- Copy or symlink configuration files (e.g., `tmux/tmux.conf`, `vim/vimrc`) into your home directory to apply them.
+- tmux helper scripts such as `tmux/select-project` expect `fzf` and default project directories; tweak the paths to match your environment.
+
+## Contributing
+Issues and pull requests are welcome. Feel free to file an issue if something is unclear or a script could be improved.
