@@ -113,7 +113,6 @@
         force: yes
 
     - name: Install Nerd Fonts (JetBrainsMono)
-      become: yes
       shell: |
         mkdir -p ~/.local/share/fonts
         wget -O /tmp/JetBrainsMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip

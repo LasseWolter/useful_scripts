@@ -1,0 +1,7 @@
+---
+- name: Set up python dev environment
+  hosts: localhost
+  tasks:
+    - name: install uv
+      shell: |
+        curl -LsSf https://astral.sh/uv/install.sh | sh
