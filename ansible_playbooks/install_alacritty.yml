@@ -39,13 +39,13 @@
     - name: Clone alacritty themes repo
       git:
         repo: https://github.com/alacritty/alacritty-theme
-        dest: .config/alacritty/themes
+        dest: ~/.config/alacritty/themes
         update: no
 
     - name: Symlink custom alacritty toml
       file:
         src: ~/Privat/useful_scripts/shell_setup/alacritty.toml
-        dest: .config/alacritty/themes
+        dest: ~/.config/alacritty/themes/alacritty.toml
         state: link
         force: yes
 
