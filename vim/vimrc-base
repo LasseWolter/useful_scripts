@@ -70,6 +70,8 @@ nmap gl gt
 nmap gh gT
 
 " Increase/Decrease number under cursor
+" increment number under cursor (use [m]ore instead of [a] because <C-a> is my tmux prefix)
+nmap <C-m> <C-a>
 nmap <C-.> <C-a>
 nmap <C-,> <C-x>
 
@@ -78,3 +80,6 @@ nnoremap > >>
 nnoremap < <<
 vnoremap > > gv
 vnoremap < < gv
+
+" Toggle current fold (zm is easier to hit and close to c-m which was my IDE mapping)
+nmap zm za
