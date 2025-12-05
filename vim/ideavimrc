@@ -160,11 +160,10 @@ map <leader>cn <Action>(copilot.newChatSession)
 " Harpoon
 nmap <leader>hm <action>(HarpoonerToggleQuickMenu)
 nmap <leader>ha <action>(HarpoonerAddFile)
-nmap <leader>ht <action>(HarpoonerToggleFile)
 
-nmap <M-s> <action>(HarpoonerOpenFile0)
-nmap <M-d> <action>(HarpoonerOpenFile1)
-nmap <M-f> <action>(HarpoonerOpenFile2)
+nmap <M-2> <action>(HarpoonerOpenFile0)
+nmap <M-3> <action>(HarpoonerOpenFile1)
+nmap <M-4> <action>(HarpoonerOpenFile2)
 
 nmap <leader>hn <action>(HarpoonerNextFileAction)
 nmap <leader>hp <action>(HarpoonerPreviousFileAction)
