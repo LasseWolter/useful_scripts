@@ -117,6 +117,7 @@ alias la='ls -a --color=auto'
 # diff side by side with colour
 alias diff-colour='diff -y --color=always'
 
+alias alaconf='vi ~/.config/alacritty/alacritty.toml'
 alias tmuxconf='vi ~/.config/tmux/tmux.conf'
 alias zshrc='vi ~/.zshrc && source ~/.zshrc'
 alias bashrc='vi ~/.bashrc && source ~/.bashrc'
