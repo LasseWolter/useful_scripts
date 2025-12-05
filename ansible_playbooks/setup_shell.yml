@@ -99,6 +99,13 @@
         state: present
       when: ansible_os_family == 'Darwin'
 
+    - name: Install wl-clipboard on Wayland systems
+      become: yes
+      apt:
+        name: wl-clipboard
+        state: present
+      when: ansible_env.XDG_SESSION_TYPE == "wayland"
+
     - name: Install Powerlevel10k theme for Oh My Zsh
       git:
         repo: https://github.com/romkatv/powerlevel10k.git
