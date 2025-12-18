@@ -1,0 +1,21 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
+]
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control"
+chars = "\u0016"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"

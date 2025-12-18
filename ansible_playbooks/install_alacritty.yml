@@ -30,6 +30,25 @@
       environment:
         PATH: "{{ ansible_env.HOME }}/.cargo/bin:{{ ansible_env.PATH }}"
 
+    - name: Ensure alacritty themes directory exists
+      file:
+        path: ~/.config/alacritty/themes
+        state: directory
+        mode: '0755'
+
+    - name: Clone alacritty themes repo
+      git:
+        repo: https://github.com/alacritty/alacritty-theme
+        dest: ~/.config/alacritty/themes
+        update: no
+
+    - name: Symlink custom alacritty toml
+      file:
+        src: ~/Privat/useful_scripts/shell_setup/alacritty.toml
+        dest: ~/.config/alacritty/themes/alacritty.toml
+        state: link
+        force: yes
+
     - name: Get alacritty icon for desktop entry (Debian)
       shell: |
         mkdir -p ~/.local/share/alacritty
@@ -52,3 +71,4 @@
           Type=Application
           Categories=System;TerminalEmulator;
       when: ansible_os_family == 'Debian'
+

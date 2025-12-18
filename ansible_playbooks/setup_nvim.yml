@@ -10,17 +10,17 @@
       args:
         creates: ~/.local/bin/nvim
 
-    - name: Clone kickstart.nvim repo
-      git:
-        repo: https://github.com/LasseWolter/kickstart.nvim
-        dest: ~/.config/nvim
-        update: no
-
     - name: Ensure nvim config directory exists
       file:
         path: ~/.config/nvim
         state: directory
         mode: '0755'
+
+    - name: Clone kickstart.nvim repo
+      git:
+        repo: https://github.com/LasseWolter/kickstart.nvim
+        dest: ~/.config/nvim
+        update: no
 
     - name: Install ripgrep (required for Telescope)
       become: yes
