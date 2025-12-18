@@ -45,7 +45,7 @@
     - name: Symlink custom alacritty toml
       file:
         src: ~/Privat/useful_scripts/shell_setup/alacritty.toml
-        dest: ~/.config/alacritty/themes/alacritty.toml
+        dest: ~/.config/alacritty/alacritty.toml
         state: link
         force: yes
 
