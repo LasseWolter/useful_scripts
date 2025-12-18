@@ -1,6 +1,6 @@
 [general]
 import = [
-    "~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
+    "~/.config/alacritty/themes/catppuccin_mocha_custom.toml"
 ]
 
 [[keyboard.bindings]]
@@ -19,3 +19,6 @@ family = "JetBrainsMono Nerd Font"
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
+
+[font]
+size = 10

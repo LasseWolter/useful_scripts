@@ -36,11 +36,12 @@
         state: directory
         mode: '0755'
 
-    - name: Clone alacritty themes repo
-      git:
-        repo: https://github.com/alacritty/alacritty-theme
-        dest: ~/.config/alacritty/themes
-        update: no
+    - name: Symlink custom alacritty theme
+      file:
+        src: ~/Privat/useful_scripts/shell_setup/theme/catppuccin_mocha_custom.toml
+        dest: ~/.config/alacritty/themes/catppuccin_mocha_custom.toml
+        state: link
+        force: yes
 
     - name: Symlink custom alacritty toml
       file:
