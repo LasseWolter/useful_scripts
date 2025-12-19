@@ -83,3 +83,6 @@ vnoremap < < gv
 
 " Toggle current fold (zm is easier to hit and close to c-m which was my IDE mapping)
 nmap zm za
+
+" Treat _ as a word separator so you can easily jump inside snake case variables
+set iskeyword-=_
