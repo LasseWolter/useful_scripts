@@ -22,3 +22,21 @@ family = "JetBrainsMono Nerd Font"
 
 [font]
 size = 10
+
+[terminal.shell]
+program = "/bin/zsh" # or /bin/bash
+args = ["--login", "-c", "source ~/.zshrc && (tmux attach || tmux)"]
+
+[window]
+title = "tmux"
+dynamic_title = true
+
+[[hints.enabled]]
+binding = { key = "O", mods = "Control|Shift" }
+command = { program = "sh", args = [ "-c", "if [ \"$(uname)\" = \"Darwin\" ]; then open \"$1\"; else xdg-open \"$1\"; fi", "sh" ] }
+hyperlinks = true
+mouse.enabled = true
+mouse.mods = "Control"
+post_processing = true
+persist = false
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩‘]+"
