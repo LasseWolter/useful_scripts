@@ -14,6 +14,7 @@ gcha() {
  git checkout "$(git branch --all | fzf| tr -d '[:space:]')"
 }
 alias gco='git checkout'
+alias gcop='git checkout main && git pull'
 alias gs='git status'
 alias ga='git add'
 alias gaa='git add -A'
