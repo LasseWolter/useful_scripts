@@ -21,12 +21,12 @@ A collection of scripts, dotfiles, and playbooks I use to bootstrap development 
    - Mac: `brew install ansible`
    - Windows: Please don't, thx
 2. Clone this repository to the machine
-   - `git clone https://github.com/LasseWolter/useful_scripts.git`
-3. Run any command with sudo (e.g. `sudo ls`) so the terminal session can run `sudo` commands because some of the commands in the ansible scripts require elevated priveleges
-   - do NOT run the whole ansible command below as `sudo`
-4. Run the top-level playbook to install shell tooling, editors, tmux, node, etc:
    ```bash
-   ansible-playbook setup_dev_machine.yml
+   git clone https://github.com/LasseWolter/useful_scripts.git
+   ```
+4. Run the top-level playbook to install shell tooling, editors, tmux, node, etc (you'll be prompted for your password because some operations require `sudo`):
+   ```bash
+   ansible-playbook setup_dev_machine.yml --ask-become-pass
    ```
 
 ### Using individual scripts
