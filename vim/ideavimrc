@@ -1,6 +1,7 @@
 " Only source .vimrc-base - contains NO plugins
 source ~/.vimrc-base
 
+imap <Right> <Action>(InsertInlineCompletionAction)
 " Add secondary bind for indentation because of the delay for '<'
 nnoremap <M-,> <<
 vnoremap <M-,> < gv

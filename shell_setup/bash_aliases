@@ -113,6 +113,7 @@ alias rmVimSwp='rm -r ~/.local/state/nvim/swap/*'
 
 alias ls='ls -F --color=auto'
 alias ll='ls -lha --color=auto'
+alias llt='ls -lha --color=auto -t | head'
 alias la='ls -a --color=auto'
 
 
