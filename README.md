@@ -29,6 +29,20 @@ A collection of scripts, dotfiles, and playbooks I use to bootstrap development 
    ansible-playbook setup_dev_machine.yml --ask-become-pass
    ```
 
+_Mac only_
+5. You need to manually create an application for alacritty, otherwise, it's only acessible via terminal
+   1. Open Script Editor (found in Applications > Utilities).
+   2. Paste the following code:
+   ```
+    do shell script "/Users/<USERNAME>/.cargo/bin/alacritty > /dev/null 2>&1 &"
+   ```
+    3. Go to File > Export.
+    4. Set File Format to Application
+    5. Save it to your Applications folder
+    6. Right-click your new shortcut and select `Get Info`
+    7. Open `/Users/kane/.local/share/alacritty` in Finder
+    8. Drag and drop the icon file directly onto the small icon in the top-left corner of the "Get Info" window
+
 ### Using individual scripts
 - Scripts in `random_scripts/` are standalone helpers. Inspect each script to confirm dependencies (e.g., `ffmpeg` for video tools) before running.
 - Copy or symlink configuration files (e.g., `tmux/tmux.conf`, `vim/vimrc`) into your home directory to apply them.

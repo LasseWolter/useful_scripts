@@ -50,13 +50,12 @@
         state: link
         force: yes
 
-    - name: Get alacritty icon for desktop entry (Debian)
+    - name: Get alacritty icon for desktop entry
       shell: |
         mkdir -p ~/.local/share/alacritty
         wget https://github.com/dfl0/mac-icons/raw/main/alacritty/icons/smooth/alacritty_smooth_full.png -O ~/.local/share/alacritty/icon.png
       args:
         creates: ~/.local/share/alacritty/logo.pnhg
-      when: ansible_os_family == 'Debian'
 
     - name: Create Alacritty desktop file (Debian)
       copy:
