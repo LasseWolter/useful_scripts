@@ -29,7 +29,7 @@ A collection of scripts, dotfiles, and playbooks I use to bootstrap development 
    ansible-playbook setup_dev_machine.yml --ask-become-pass
    ```
 
-_CONTINUE if on Mac_
+_CONTINUE if on Mac (alternatively install .dmg and use workaround to open described [here]([url](https://github.com/alacritty/alacritty/issues/6500)))_
 
 5. On Mac, you need to manually create an application for alacritty, otherwise, it's only acessible via terminal
    1. Open Script Editor (found in Applications > Utilities).
@@ -43,6 +43,12 @@ _CONTINUE if on Mac_
     6. Right-click your new shortcut and select `Get Info`
     7. Open `/Users/kane/.local/share/alacritty` in Finder
     8. Drag and drop the icon file directly onto the small icon in the top-left corner of the "Get Info" window
+    9. If using Raycast, create another script to focus alacritty and bind that to your hotkey:
+    ```
+    tell application "System Events"
+    set frontmost of process "alacritty" to true
+    end tell
+    ```
 
 ### Using individual scripts
 - Scripts in `random_scripts/` are standalone helpers. Inspect each script to confirm dependencies (e.g., `ffmpeg` for video tools) before running.
