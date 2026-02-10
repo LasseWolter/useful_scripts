@@ -35,7 +35,7 @@ _CONTINUE if on Mac (alternatively install .dmg and use workaround to open descr
    1. Open Script Editor (found in Applications > Utilities).
    2. Paste the following code:
    ```
-    do shell script "/Users/<USERNAME>/.cargo/bin/alacritty > /dev/null 2>&1 &"
+   do shell script "/Users/<USERNAME>/.cargo/bin/alacritty > /dev/null 2>&1 &"
    ```
     3. Go to File > Export.
     4. Set File Format to Application
