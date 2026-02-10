@@ -29,26 +29,35 @@ A collection of scripts, dotfiles, and playbooks I use to bootstrap development 
    ansible-playbook setup_dev_machine.yml --ask-become-pass
    ```
 
-_CONTINUE if on Mac (alternatively install .dmg and use workaround to open described [here]([url](https://github.com/alacritty/alacritty/issues/6500)))_
+_CONTINUE if on Mac_
 
-5. On Mac, you need to manually create an application for alacritty, otherwise, it's only acessible via terminal
-   1. Open Script Editor (found in Applications > Utilities).
-   2. Paste the following code:
-   ```
-   do shell script "/Users/<USERNAME>/.cargo/bin/alacritty > /dev/null 2>&1 &"
-   ```
-    3. Go to File > Export.
-    4. Set File Format to Application
-    5. Save it to your Applications folder
-    6. Right-click your new shortcut and select `Get Info`
-    7. Open `/Users/<USERNAME>/.local/share/alacritty` in Finder
-    8. Drag and drop the icon file directly onto the small icon in the top-left corner of the "Get Info" window
-    9. If using Raycast, to focus alacritty with a hotkey, create another Application using Script Editor (using the above application keeps launching a new instance instead of focussing the open instance):
-    ```
-    tell application "System Events"
+5. Install alacritty .dmg file from https://alacritty.org/ and use workaround to open described [here]([url](https://github.com/alacritty/alacritty/issues/6500)))
+
+<details>
+   <summary>Alternative workaround to make cargo app function as a native app on Mac</summary>
+   <ol>
+  <li>Manually create an application for Alacritty
+    <ol>
+      <li>Open Script Editor (found in Applications &gt; Utilities).</li>
+      <li>Paste the following code:
+        <pre><code>do shell script "/Users/&lt;USERNAME&gt;/.cargo/bin/alacritty &gt; /dev/null 2&gt;&1 &amp;"</code></pre>
+      </li>
+      <li>Go to File &gt; Export.</li>
+      <li>Set File Format to Application.</li>
+      <li>Save it to your Applications folder.</li>
+      <li>Right-click your new shortcut and select <code>Get Info</code>.</li>
+      <li>Open <code>/Users/&lt;USERNAME&gt;/.local/share/alacritty</code> in Finder.</li>
+      <li>Drag and drop the icon file directly onto the small icon in the top-left corner of the "Get Info" window.</li>
+      <li>If using Raycast, to focus Alacritty with a hotkey, create another Application using Script Editor (using the above application keeps launching a new instance instead of focusing the open instance):
+        <pre><code>tell application "System Events"
     set frontmost of process "alacritty" to true
-    end tell
-    ```
+end tell</code></pre>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+</details>
 
 ### Using individual scripts
 - Scripts in `random_scripts/` are standalone helpers. Inspect each script to confirm dependencies (e.g., `ffmpeg` for video tools) before running.
