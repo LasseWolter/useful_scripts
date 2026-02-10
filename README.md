@@ -29,8 +29,9 @@ A collection of scripts, dotfiles, and playbooks I use to bootstrap development 
    ansible-playbook setup_dev_machine.yml --ask-become-pass
    ```
 
-_Mac only_
-5. You need to manually create an application for alacritty, otherwise, it's only acessible via terminal
+_CONTINUE if on Mac_
+
+5. On Mac, you need to manually create an application for alacritty, otherwise, it's only acessible via terminal
    1. Open Script Editor (found in Applications > Utilities).
    2. Paste the following code:
    ```
