@@ -41,7 +41,7 @@ _CONTINUE if on Mac (alternatively install .dmg and use workaround to open descr
     4. Set File Format to Application
     5. Save it to your Applications folder
     6. Right-click your new shortcut and select `Get Info`
-    7. Open `/Users/kane/.local/share/alacritty` in Finder
+    7. Open `/Users/<USERNAME>/.local/share/alacritty` in Finder
     8. Drag and drop the icon file directly onto the small icon in the top-left corner of the "Get Info" window
     9. If using Raycast, to focus alacritty with a hotkey, create another Application using Script Editor (using the above application keeps launching a new instance instead of focussing the open instance):
     ```
