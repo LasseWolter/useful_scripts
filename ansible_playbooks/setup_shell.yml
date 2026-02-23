@@ -110,7 +110,7 @@
       apt:
         name: wl-clipboard
         state: present
-      when: (ansible_os_family == 'Debian') and (ansible_env.XDG_SESSION_TYPE == "wayland")
+      when: (ansible_facts.os_family == 'Debian') and (ansible_env.XDG_SESSION_TYPE == "wayland")
 
     - name: Install Powerlevel10k theme for Oh My Zsh
       git:
