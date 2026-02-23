@@ -9,13 +9,13 @@
         chmod +x ~/.local/bin/nvim
       args:
         creates: ~/.local/bin/nvim
-      when: ansible_os_family == 'Debian'
+      when: ansible_facts.os_family == 'Debian'
 
     - name: Install nvim with brew (Mac)
       homebrew:
         name: nvim
         state: present
-      when: ansible_os_family == 'Darwin'
+      when: ansible_facts.os_family == 'Darwin'
 
     - name: Ensure nvim config directory exists
       file:
@@ -34,7 +34,13 @@
       apt:
         name: ripgrep
         state: present
-      when: ansible_os_family == 'Debian'
+      when: ansible_facts.os_family == 'Debian'
+
+    - name: Install ripgrep - Mac (required for Telescope)
+      homebrew:
+        name: ripgrep
+        state: present
+      when: ansible_facts.os_family == 'Darwin'
 
     - name: Install common Neovim dependencies (e.g. for clipboard)
       become: yes
@@ -43,4 +49,4 @@
           - xclip
           - gcc
         state: present
-      when: ansible_os_family == 'Debian'
+      when: ansible_facts.os_family == 'Debian'

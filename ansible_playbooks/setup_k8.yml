@@ -6,10 +6,10 @@
       homebrew:
         name: kubectl
         state: present
-      when: ansible_os_family == 'Darwin'
+      when: ansible_facts.os_family == 'Darwin'
 
     - name: Install kubectx/kubens (Mac)
       homebrew:
         name: kubectx
         state: present
-      when: ansible_os_family == 'Darwin'
+      when: ansible_facts.os_family == 'Darwin'

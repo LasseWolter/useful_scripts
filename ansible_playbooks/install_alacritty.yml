@@ -7,7 +7,7 @@
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
       args:
         creates: ~/.cargo/bin/cargo
-      when: ansible_os_family == 'Debian'
+      when: ansible_facts.os_family == 'Debian'
 
     - name: Install Alacritty deps (Debian)
       become: yes
@@ -21,7 +21,7 @@
           - libxkbcommon-dev
           - python3
         state: present
-      when: ansible_os_family == 'Debian'
+      when: ansible_facts.os_family == 'Debian'
 
     - name: Install Alacritty via cargo
       shell: |
@@ -29,8 +29,8 @@
       args:
         creates: ~/.cargo/bin/alacritty
       environment:
-        PATH: "{{ ansible_env.HOME }}/.cargo/bin:{{ ansible_env.PATH }}"
-      when: ansible_os_family == 'Debian'
+        PATH: "{{ ansible_facts.env.HOME }}/.cargo/bin:{{ ansible_facts.env.PATH }}"
+      when: ansible_facts.os_family == 'Debian'
 
     - name: Ensure alacritty themes directory exists
       file:
@@ -61,16 +61,16 @@
 
     - name: Create Alacritty desktop file (Debian)
       copy:
-        dest: "{{ ansible_env.HOME }}/.local/share/applications/alacritty.desktop"
+        dest: "{{ ansible_facts.env.HOME }}/.local/share/applications/alacritty.desktop"
         mode: '0644'
         content: |
           [Desktop Entry]
           Name=Alacritty
           Comment=Alacritty Terminal Emulator
-          Exec={{ ansible_env.HOME }}/.cargo/bin/alacritty
-          Icon={{ ansible_env.HOME }}/.local/share/alacritty/icon.png
+          Exec={{ ansible_facts.env.HOME }}/.cargo/bin/alacritty
+          Icon={{ ansible_facts.env.HOME }}/.local/share/alacritty/icon.png
           Terminal=false
           Type=Application
           Categories=System;TerminalEmulator;
-      when: ansible_os_family == 'Debian'
+      when: ansible_facts.os_family == 'Debian'
 

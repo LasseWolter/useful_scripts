@@ -7,13 +7,13 @@
       apt:
         name: tmux
         state: present
-      when: ansible_os_family == 'Debian'
+      when: ansible_facts.os_family == 'Debian'
 
     - name: Install tmux (Mac)
       homebrew:
         name: tmux
         state: present
-      when: ansible_os_family == 'Darwin'
+      when: ansible_facts.os_family == 'Darwin'
 
     - name: Install tmux plugin manager (tpm)
       shell: |

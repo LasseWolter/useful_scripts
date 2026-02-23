@@ -7,13 +7,13 @@
       apt:
         name: zsh
         state: present
-      when: ansible_os_family == 'Debian'
+      when: ansible_facts.os_family == 'Debian'
 
     - name: Install zsh (Mac)
       homebrew:
         name: zsh
         state: present
-      when: ansible_os_family == 'Darwin'
+      when: ansible_facts.os_family == 'Darwin'
 
     - name: Install Oh My Zsh
       shell: |
@@ -50,15 +50,15 @@
     - name: Set zsh as default shell (Debian)
       become: yes
       user:
-        name: "{{ ansible_user_id }}"
+        name: "{{ ansible_facts.user_id }}"
         shell: /usr/bin/zsh
-      when: ansible_os_family == 'Debian'
+      when: ansible_facts.os_family == 'Debian'
 
     - name: Set zsh as default shell (Mac)
       user:
-        name: "{{ ansible_user_id }}"
+        name: "{{ ansible_facts.user_id }}"
         shell: /bin/zsh
-      when: ansible_os_family == 'Darwin'
+      when: ansible_facts.os_family == 'Darwin'
 
     - name: Install fzf (latest from repo)
       shell: |
@@ -78,32 +78,32 @@
       apt:
         name: zoxide
         state: present
-      when: ansible_os_family == 'Debian'
+      when: ansible_facts.os_family == 'Debian'
 
     - name: Install zoxide (macOS)
       homebrew:
         name: zoxide
         state: present
-      when: ansible_os_family == 'Darwin'
+      when: ansible_facts.os_family == 'Darwin'
 
     - name: Install ugrep (Debian)
       become: yes
       apt:
         name: ugrep
         state: present
-      when: ansible_os_family == 'Debian'
+      when: ansible_facts.os_family == 'Debian'
 
     - name: Install ugrep (macOS)
       homebrew:
         name: ugrep
         state: present
-      when: ansible_os_family == 'Darwin'
+      when: ansible_facts.os_family == 'Darwin'
 
     - name: Install wget (Mac)
       homebrew:
         name: wget
         state: present
-      when: ansible_os_family == 'Darwin'
+      when: ansible_facts.os_family == 'Darwin'
 
     - name: Install wl-clipboard on Wayland systems
       become: yes
@@ -131,12 +131,12 @@
         wget -O /tmp/JetBrainsMono.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip
         unzip -o /tmp/JetBrainsMono.zip -d ~/.local/share/fonts/
         fc-cache -fv
-      when: ansible_os_family == 'Debian'
+      when: ansible_facts.os_family == 'Debian'
       args:
         creates: ~/.local/share/fonts/JetBrainsMonoNerdFont-Regular.ttf
 
     - name: Install Nerd Fonts (JetBrainsMono) on macOS
       shell: |
         brew install --cask font-jetbrains-mono-nerd-font
-      when: ansible_os_family == 'Darwin'
+      when: ansible_facts.os_family == 'Darwin'
 
