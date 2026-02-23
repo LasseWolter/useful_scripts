@@ -9,6 +9,13 @@
         chmod +x ~/.local/bin/nvim
       args:
         creates: ~/.local/bin/nvim
+      when: ansible_os_family == 'Debian'
+
+    - name: Install nvim with brew (Mac)
+      homebrew:
+        name: nvim
+        state: present
+      when: ansible_os_family == 'Darwin'
 
     - name: Ensure nvim config directory exists
       file:

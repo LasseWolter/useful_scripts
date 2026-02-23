@@ -9,6 +9,12 @@
         state: present
       when: ansible_os_family == 'Debian'
 
+    - name: Install tmux (Mac)
+      homebrew:
+        name: tmux
+        state: present
+      when: ansible_os_family == 'Darwin'
+
     - name: Install tmux plugin manager (tpm)
       shell: |
         git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
