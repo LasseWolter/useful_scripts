@@ -8,6 +8,28 @@ key = "V"
 mods = "Control"
 chars = "\u0016"
 
+# Option / Alt + Arrow → macOS-style word movement
+[[keyboard.bindings]]
+key = "Left"
+mods = "Alt"
+chars = "\u001bb"   # backward-word
+
+[[keyboard.bindings]]
+key = "Right"
+mods = "Alt"
+chars = "\u001bf"   # forward-word
+
+# Ctrl + Arrow → Linux-style word movement
+[[keyboard.bindings]]
+key = "Left"
+mods = "Control"
+chars = "\u001bb"   # backward-word
+
+[[keyboard.bindings]]
+key = "Right"
+mods = "Control"
+chars = "\u001bf"   # forward-word
+
 [font.bold]
 family = "JetBrainsMono Nerd Font"
 
