@@ -14,6 +14,8 @@ export PATH="$PATH:$HOME/.scripts"
 export PATH="$PATH:$HOME/.local/bin/pact/bin"
 export PATH="$PATH:$HOME/.yarn/bin/"
 export PATH="$PATH:$HOME/.dotnet/"
+export PATH="$PATH:$HOME/.dotnet/tools"
+
 
 # nvm configs
 export NVM_DIR="$HOME/.nvm"
@@ -30,7 +32,8 @@ fi
 export GH_PAGER=
 
 # .NET
-export DOTNET_ROOT=$HOME/.dotnet
+#export DOTNET_ROOT=$HOME/.dotnet # for local install
+export DOTNET_ROOT="/usr/local/share/dotnet" # for system wide install
 
 # Use nvim for  command editing in bash (e.g. when using fc or <C-x><C-e>)
 export EDITOR=nvim
