@@ -4,6 +4,37 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Cmd+Right arrow -> Option+cmd arrow (to allow for window snapping because end/home already mapps to cmd+arrow)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_arrow",
+                                    "modifiers": { "mandatory": ["command"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": ["command", "option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "left_arrow",
+                                    "modifiers": { "mandatory": ["command"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": ["command", "option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Option+number -> option+number (instead of special chars)",
                         "manipulators": [
                             {
@@ -186,12 +217,26 @@
                         ]
                     },
                     {
-                        "description": "left_option+left_control+q to left_command+left_control+q - Make computer sleep (to allow using same shortcut across operating systems)",
+                        "description": "(left_option+left_control+q) OR (cmd+L) to Make computer sleep",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "q",
                                     "modifiers": { "mandatory": ["left_option", "left_control"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "q",
+                                        "modifiers": ["left_command", "left_control"],
+                                        "repeat": false
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": { "mandatory": ["left_command"] }
                                 },
                                 "to": [
                                     {
@@ -754,6 +799,7 @@
                     },
                     {
                         "description": "Map Rectangular Screenshot (copy to clipboard) to Alt/Option+Shift+s",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -2203,6 +2249,7 @@
                     },
                     {
                         "description": "Command+left_arrow => Cmd+backspace (Go back) (Only in Finder)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
