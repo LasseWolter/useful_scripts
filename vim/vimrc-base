@@ -44,8 +44,6 @@ nmap <leader>l <c-^>
 " replace all text selected in visual mode
 vmap <leader>s [["hy:%s/<C-r>h/<C-r>h/g<left><left>]]
 
-imap jj <Esc>
-imap jk <Esc>
 nmap tn :tabnew
 
 " ========== COPY-PASTE-BINDINGS ==========
