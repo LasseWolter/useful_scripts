@@ -80,12 +80,6 @@
         state: present
       when: ansible_facts.os_family == 'Debian'
 
-    - name: Install zoxide (macOS)
-      homebrew:
-        name: zoxide
-        state: present
-      when: ansible_facts.os_family == 'Darwin'
-
     - name: Install ugrep (Debian)
       become: yes
       apt:
@@ -95,13 +89,11 @@
 
     - name: Install ugrep (macOS)
       homebrew:
-        name: ugrep
-        state: present
-      when: ansible_facts.os_family == 'Darwin'
-
-    - name: Install wget (Mac)
-      homebrew:
-        name: wget
+        name:
+        - zoxide
+        - ugrep
+        - wget
+        - gh
         state: present
       when: ansible_facts.os_family == 'Darwin'
 
