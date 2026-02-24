@@ -64,5 +64,6 @@ end tell</code></pre>
 - Copy or symlink configuration files (e.g., `tmux/tmux.conf`, `vim/vimrc`) into your home directory to apply them.
 - tmux helper scripts such as `tmux/select-project` expect `fzf` and default project directories; tweak the paths to match your environment.
 
-## Contributing
-Issues and pull requests are welcome. Feel free to file an issue if something is unclear or a script could be improved.
+### Jetbrains IDE setup
+- install ideaVim - the .ideavimrc will do a lot for you
+- to toggle terminal with <C-a>j you need to disable `Override IDE Shortcuts` in `Tools>Terminal`-Settings"
