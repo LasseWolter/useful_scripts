@@ -35,6 +35,13 @@ alias gcll=gitLocalConfigs
 alias ghpr='gh pr create'
 alias ghb='gh browse'
 alias ghil='gh issue list'
+
+gpo () {
+        echo Pushing branch $(git symbolic-ref --short HEAD);
+        git push origin -u $(git symbolic-ref --short HEAD);
+        gh pr create --web;
+}
+
 ghid(){gh issue develop $1 -c}
 
 restoreMatching() {
