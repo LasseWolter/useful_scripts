@@ -1,0 +1,245 @@
+{
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+
+  // =========================================================
+  // VSCode Vim – mirroring Rider/IdeaVim + .vimrc-base setup
+  // =========================================================
+
+  // ---------- Core vim options (mirrors .vimrc-base) ----------
+  "vim.enable": true,
+  "vim.leader": "<space>",
+  "vim.ignorecase": true,
+  "vim.smartcase": true,
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.scrolloff": 5,
+  "vim.visualBell": true,
+  "vim.useCtrlKeys": true,
+  "vim.iskeyword": "@,48-57,192-255",
+
+  // Explicitly route these Ctrl keys to vim instead of VSCode
+  "vim.handleKeys": {
+    "<C-a>": true,   // increment (underlying for <C-m>/<C-.>)
+    "<C-c>": true,   // yank to clipboard
+    "<C-d>": true,   // scroll down
+    "<C-h>": true,   // focus left split
+    "<C-j>": true,   // focus below split
+    "<C-k>": true,   // focus above split + <C-k>* chords
+    "<C-l>": true,   // focus right split
+    "<C-m>": true,   // increment number
+    "<C-u>": true,   // scroll up
+    "<C-v>": true,   // visual block (remapped to <C-q>)
+    "<C-w>": true    // split manipulation
+  },
+
+  // ---------- Built-in plugins ----------
+  "vim.easymotion": true,
+  "vim.surround": true,
+  "vim.commentary": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "rgba(241, 153, 64, 180)",
+  "vim.camelCaseMotion.enable": true,
+
+  "editor.lineNumbers": "relative",
+
+  // =========================================================
+  // NORMAL MODE BINDINGS
+  // =========================================================
+  "vim.normalModeKeyBindingsNonRecursive": [
+
+    // --- .vimrc-base ---
+
+    // Scroll & centre
+    { "before": ["<C-d>"], "after": ["<C-d>", "z", "z"] },
+    { "before": ["<C-u>"], "after": ["<C-u>", "z", "z"] },
+    { "before": ["n"],     "after": ["n", "z", "z", "z", "v"] },
+    { "before": ["N"],     "after": ["N", "z", "z", "z", "v"] },
+
+    // Alternate file
+    { "before": ["<leader>", "l"], "after": ["<C-^>"] },
+
+    // Tab navigation
+    { "before": ["g", "l"], "after": ["g", "t"] },
+    { "before": ["g", "h"], "after": ["g", "T"] },
+
+    // Increment / decrement
+    { "before": ["<C-m>"], "after": ["<C-a>"] },
+    { "before": ["<C-.>"], "after": ["<C-a>"] },
+    { "before": ["<C-,>"], "after": ["<C-x>"] },
+
+    // Single-key indent
+    { "before": [">"], "after": [">", ">"] },
+    { "before": ["<"], "after": ["<", "<"] },
+
+    // Toggle fold (zm → za)
+    { "before": ["z", "m"], "after": ["z", "a"] },
+
+    // Yank/select {}-bounded function
+    { "before": ["y", "a", "f"], "after": ["v", "a", "{", "o", "{", "j", "y"] },
+    { "before": ["v", "a", "f"], "after": ["v", "a", "{", "o", "{", "j"] },
+
+    // New tab
+    { "before": ["t", "n"], "commands": [":tabnew"] },
+
+    // Clipboard
+    { "before": ["<leader>", "y"], "after": ["\"", "+", "y"] },
+    { "before": ["<leader>", "Y"], "after": ["\"", "+", "Y"] },
+    { "before": ["<leader>", "p"], "after": ["\"", "+", "p"] },
+    { "before": ["<C-c>"],         "after": ["\"", "+", "y"] },
+
+    // Clear search highlight
+    { "before": ["<Esc>"], "commands": [":nohl"] },
+
+    // Split navigation
+    { "before": ["<C-h>"], "commands": ["workbench.action.focusLeftGroup"]  },
+    { "before": ["<C-j>"], "commands": ["workbench.action.focusBelowGroup"] },
+    { "before": ["<C-k>"], "commands": ["workbench.action.focusAboveGroup"] },
+    { "before": ["<C-l>"], "commands": ["workbench.action.focusRightGroup"] },
+
+    // --- .ideavimrc ---
+
+    // Indent with Alt-, / Alt-.
+    { "before": ["<M-,>"], "after": ["<", "<"] },
+    { "before": ["<M-.>"], "after": [">", ">"] },
+
+    // s → easymotion bidirectional find-char
+    { "before": ["s"], "after": ["<leader>", "<leader>", "s"] },
+
+    // Visual block (remap C-v → C-q)
+    { "before": ["<C-v>"], "after": ["<C-q>"] },
+
+    // Multi-caret
+    { "before": ["<M-j>"], "commands": ["editor.action.insertCursorBelow"] },
+    { "before": ["<M-k>"], "commands": ["editor.action.insertCursorAbove"] },
+
+    // Splits
+    { "before": ["<C-w>", "v"], "commands": ["workbench.action.splitEditor"]     },
+    { "before": ["<C-w>", "s"], "commands": ["workbench.action.splitEditorDown"] },
+
+    // LSP
+    { "before": ["<leader>", "r", "n"], "commands": ["editor.action.rename"]             },
+    { "before": ["<leader>", "a"],      "commands": ["workbench.action.showCommands"]    },
+    { "before": ["<leader>", "f"],      "commands": ["editor.action.formatDocument"]     },
+    { "before": ["g", "i"],             "commands": ["editor.action.goToImplementation"] },
+    { "before": ["g", "r"],             "commands": ["editor.action.goToReferences"]     },
+    { "before": ["K"],                  "commands": ["editor.action.showHover"]          },
+
+    // Diagnostics
+    { "before": ["]", "d"], "commands": ["editor.action.marker.next"]        },
+    { "before": ["[", "d"], "commands": ["editor.action.marker.prev"]        },
+    { "before": ["]", "f"], "commands": ["editor.action.marker.nextInFiles"] },
+    { "before": ["[", "f"], "commands": ["editor.action.marker.prevInFiles"] },
+    { "before": ["<leader>", "j"], "commands": ["editor.action.marker.nextInFiles"] },
+    { "before": ["<leader>", "k"], "commands": ["editor.action.marker.prevInFiles"] },
+
+    // Navigate back/forward
+    { "before": ["<A-Left>"],  "commands": ["workbench.action.navigateBack"]    },
+    { "before": ["<A-Right>"], "commands": ["workbench.action.navigateForward"] },
+
+    // Debug
+    { "before": ["<leader>", "d"],      "commands": ["workbench.action.debug.start"]         },
+    { "before": ["<leader>", "d", "d"], "commands": ["workbench.action.debug.start"]         },
+    { "before": ["<leader>", "d", "r"], "commands": ["workbench.action.debug.run"]           },
+    { "before": ["<leader>", "d", "c"], "commands": ["workbench.action.debug.stop"]          },
+    { "before": ["<leader>", "b"],      "commands": ["editor.debug.action.toggleBreakpoint"] },
+
+    // Build
+    { "before": ["<leader>", "m", "b"], "commands": ["workbench.action.tasks.build"] },
+
+    // Tests
+    { "before": ["<leader>", "t"],      "commands": ["testing.openTesting"]      },
+    { "before": ["<leader>", "u", "r"], "commands": ["testing.runAtCursor"]      },
+    { "before": ["<leader>", "u", "d"], "commands": ["testing.debugAtCursor"]    },
+    { "before": ["<leader>", "u", "l"], "commands": ["testing.runAll"]           },
+    { "before": ["<leader>", "u", "c"], "commands": ["testing.coverageAtCursor"] },
+    { "before": ["<leader>", "u", "u"], "commands": ["testing.reRunLastRun"]     },
+    { "before": ["<leader>", "u", "y"], "commands": ["testing.reRunLastRun"]     },
+
+    // Git
+    { "before": ["]", "c"], "commands": ["workbench.action.editor.nextChange"]     },
+    { "before": ["[", "c"], "commands": ["workbench.action.editor.previousChange"] },
+    { "before": ["<leader>", "g", "c"],      "commands": ["workbench.view.scm"]           },
+    { "before": ["<leader>", "g", "g"],      "commands": ["workbench.view.scm"]           },
+    { "before": ["<leader>", "g", "b"],      "commands": ["git.checkout"]                 },
+    { "before": ["<leader>", "g", "a"],      "commands": ["gitlens.toggleFileBlame"]      },
+    { "before": ["<leader>", "g", "p"],      "commands": ["gitlens.openPullRequestsView"] },
+    { "before": ["<leader>", "g", "h"],      "commands": ["gitlens.showFileHistoryView"]  },
+    { "before": ["<leader>", "g", "h", "f"], "commands": ["gitlens.showFileHistoryView"]  },
+    { "before": ["<leader>", "g", "h", "s"], "commands": ["gitlens.showLineHistoryView"]  },
+    { "before": ["<leader>", "h", "r"],      "commands": ["git.revertSelectedRanges"]     },
+
+    // Search / navigation
+    { "before": ["<leader>", "s", "f"], "commands": ["workbench.action.quickOpen"]      },
+    { "before": ["<leader>", "s", "g"], "commands": ["workbench.action.findInFiles"]    },
+    { "before": ["<leader>", "s", "s"], "commands": ["workbench.action.showAllSymbols"] },
+    { "before": ["<leader>", "o"],      "commands": ["workbench.action.gotoSymbol"]     },
+    { "before": ["<leader>", "e"],      "commands": ["workbench.files.action.showActiveFileInExplorer"] },
+
+    // View toggles
+    { "before": ["<leader>", "\\"], "commands": ["workbench.action.toggleZenMode"]           },
+    { "before": ["<leader>", "z"],  "commands": ["workbench.action.toggleSidebarVisibility"] },
+
+    // C-k chords
+    { "before": ["<C-k>", "p"], "commands": ["copyRelativeFilePath"]                    },
+    { "before": ["<C-k>", "s"], "commands": ["workbench.action.openRecent"]             },
+    { "before": ["<C-k>", "l"], "commands": ["editor.action.toggleRelativeLineNumbers"] },
+
+    // Pin tab
+    { "before": ["t", "p"], "commands": ["workbench.action.pinEditor"] },
+
+    // Copilot
+    { "before": ["<leader>", "c", "i"], "commands": ["inlineChat.start"]              },
+    { "before": ["<leader>", "c", "c"], "commands": ["workbench.action.chat.open"]    },
+    { "before": ["<leader>", "c", "n"], "commands": ["workbench.action.chat.newChat"] },
+
+    // Harpoon (requires "vscode-harpoon" extension by tobias-z)
+    { "before": ["<leader>", "h", "m"], "commands": ["vscode-harpoon.editEditors"]             },
+    { "before": ["<leader>", "h", "a"], "commands": ["vscode-harpoon.addEditor"]               },
+    { "before": ["<leader>", "h", "n"], "commands": ["vscode-harpoon.gotoNextHarpoonFile"]     },
+    { "before": ["<leader>", "h", "p"], "commands": ["vscode-harpoon.gotoPreviousHarpoonFile"] },
+    { "before": ["<M-2>"], "commands": ["vscode-harpoon.gotoEditor1"] },
+    { "before": ["<M-3>"], "commands": ["vscode-harpoon.gotoEditor2"] },
+    { "before": ["<M-4>"], "commands": ["vscode-harpoon.gotoEditor3"] }
+
+  ],
+
+  // =========================================================
+  // VISUAL MODE BINDINGS
+  // =========================================================
+  "vim.visualModeKeyBindingsNonRecursive": [
+
+    // Re-select after indent
+    { "before": [">"],     "after": [">", "g", "v"] },
+    { "before": ["<"],     "after": ["<", "g", "v"] },
+    { "before": ["<M-.>"], "after": [">", "g", "v"] },
+    { "before": ["<M-,>"], "after": ["<", "g", "v"] },
+
+    // Move lines
+    { "before": ["J"],     "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["K"],     "commands": ["editor.action.moveLinesUpAction"]   },
+    { "before": ["<M-j>"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["<M-k>"], "commands": ["editor.action.moveLinesUpAction"]   },
+
+    // Increment
+    { "before": ["<C-m>"],  "after": ["<C-a>"] },
+    { "before": ["g", "m"], "after": ["g", "<C-a>"] },
+
+    // Clipboard
+    { "before": ["<C-c>"],         "after": ["\"", "+", "y"] },
+    { "before": ["<leader>", "y"], "after": ["\"", "+", "y"] },
+
+    // Search selected text
+    { "before": ["*"], "after": ["y", "/", "<C-r>\"", "<CR>"] }
+
+  ],
+
+  // =========================================================
+  // INSERT MODE BINDINGS
+  // =========================================================
+  "vim.insertModeKeyBindings": [
+    { "before": ["<C-v>"], "after": ["<C-r>", "+"] }
+],
+"editor.wordSeparators": "@,48-57,192-255",
+"editor.cursorSurroundingLines": 5
+}
