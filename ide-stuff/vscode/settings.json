@@ -41,7 +41,7 @@
   "vim.highlightedyank.color": "rgba(241, 153, 64, 180)",
   "vim.camelCaseMotion.enable": true,
 
-  "editor.lineNumbers": "relative",
+  "editor.lineNumbers": "on",
 
   // =========================================================
   // NORMAL MODE BINDINGS
@@ -185,8 +185,12 @@
     { "before": ["<C-k>", "s"], "commands": ["workbench.action.openRecent"]             },
     { "before": ["<C-k>", "l"], "commands": ["editor.action.toggleRelativeLineNumbers"] },
 
-    // Pin tab
+    // Tabs
     { "before": ["t", "p"], "commands": ["workbench.action.pinEditor"] },
+    { "before": ["<leader>", "x"], "commands": ["workbench.action.closeActiveEditor"] },
+
+    // Explorer 
+    { "before": ["<leader>", "e"], "commands": ["workbench.files.action.showActiveFileInExplorer"] },
 
     // Copilot
     { "before": ["<leader>", "c", "i"], "commands": ["inlineChat.start"]              },
@@ -241,5 +245,7 @@
     { "before": ["<C-v>"], "after": ["<C-r>", "+"] }
 ],
 "editor.wordSeparators": "@,48-57,192-255",
-"editor.cursorSurroundingLines": 5
+"editor.cursorSurroundingLines": 5,
+"chat.viewSessions.orientation": "stacked",
+"files.autoSave": "afterDelay"
 }
