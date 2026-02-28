@@ -1,5 +1,9 @@
-// Place your key bindings in this file to override the defaults
 [
+     {
+        "key": "ctrl+a m",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when": "terminalFocus"
+    },
     {
         "key": "alt+n",
         "command": "editor.action.addSelectionToNextFindMatch",
