@@ -1,5 +1,25 @@
 [
     {
+        "key": "alt+n",
+        "command": "editor.action.addSelectionToNextFindMatch",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+p",
+        "command": "editor.action.undoLastCursor",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+j",
+        "command": "editor.action.insertCursorBelow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+k",
+        "command": "editor.action.insertCursorAbove",
+        "when": "editorTextFocus"
+    },
+    {
         "key": "enter",
         "command": "list.select",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"

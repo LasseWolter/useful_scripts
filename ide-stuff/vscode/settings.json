@@ -89,7 +89,7 @@
     { "before": ["<C-c>"],         "after": ["\"", "+", "y"] },
 
     // Clear search highlight
-    { "before": ["<Esc>"], "commands": [":nohl"] },
+    { "before": ["<Esc>"],   "commands": [ ":nohl", "removeSecondaryCursors" ]},
 
     // Split navigation
     { "before": ["<C-h>"], "commands": ["workbench.action.focusLeftGroup"]  },
