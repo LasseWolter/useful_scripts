@@ -52,6 +52,8 @@ args = ["--login", "-c", "source ~/.zshrc && (tmux attach || tmux)"]
 [window]
 title = "tmux"
 dynamic_title = true
+option_as_alt = "Both"
+
 
 [[hints.enabled]]
 binding = { key = "O", mods = "Control|Shift" }
