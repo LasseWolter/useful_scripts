@@ -30,12 +30,12 @@
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
     {
-        "key": "cmd+a j",
+        "key": "ctrl+a j",
         "command": "workbench.action.terminal.toggleTerminal",
         "when": "editorTextFocus || terminalFocus"
     },
-    { // Explicitly override because normally vscode wait for second keystroke when hitting cmd+a due to the focus terminal shortcut
-        "key": "cmd+a",
+    { // Explicitly override because normally vscode wait for second keystroke when hitting ctrl+a due to the focus terminal shortcut
+        "key": "ctrl+a",
         "command": "editor.action.selectAll",
         "when": "githubCopilotSuggestionVisible"
     },
