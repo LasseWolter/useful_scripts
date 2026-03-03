@@ -121,6 +121,7 @@ nmap [m <Action>(MethodUp)
 nmap <A-Right> <Action>(Forward)
 nmap <A-Left> <Action>(Back)
 
+
 " GIT
 " Assign two actions because to use it for changes in normal files and diff files
 nmap ]c <Action>(VcsShowNextChangeMarker)<Action>(NextDiff)

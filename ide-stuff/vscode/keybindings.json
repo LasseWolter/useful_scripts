@@ -10,6 +10,11 @@
         "when": "editorTextFocus"
     },
     {
+        "key": "alt+x",
+        "command": "editor.action.moveSelectionToNextFindMatch",
+        "when": "editorTextFocus"
+    },
+    {
         "key": "alt+p",
         "command": "editor.action.undoLastCursor",
         "when": "editorTextFocus"
