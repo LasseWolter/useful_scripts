@@ -79,7 +79,8 @@ alias kvs=kvshow
 alias k=kubectl
 alias kns=kubens # requires kubens to be installed
 alias ktx=kubectx # requires kubens to be installed
-alias khw='k get hw | hgrep'
+alias khw='k get hw | grep'
+alias khwh='k get hw | hgrep'
 
 knary() {
     NAMESPACE="${2:-prod}"
@@ -107,6 +108,7 @@ kenv() {
     eval "$CMD"
 }
 
+alias klog='kubectl logs --timestamps'
 koward() {
     NAMESPACE="${2:-prod}"
     PORT="${3:-5000}"
@@ -115,6 +117,8 @@ koward() {
     (sleep 1; zen http://localhost:8080/swagger)&
     eval "$CMD"
 }
+
+alias stern='stern --timestamps'
 
 alias rmVimSwp='rm -r ~/.local/state/nvim/swap/*'
 
@@ -150,7 +154,7 @@ alias rmBinObj='find . -not \( -path "*/node_modules/*" \) -iname bin -o -iname 
 alias csi=csharprepl
 
 # PYTHON
-alias vac='source $(find -name "*venv")/bin/activate'
+alias vac='source .venv/bin/activate || source venv/bin/activate'
 
 # Create this file for local aliases that shouldn't be shared/are not compatible across machines
 # Everything defined in that file will overwrite aliases in this file
