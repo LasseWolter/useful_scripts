@@ -247,5 +247,6 @@
 "editor.wordSeparators": "@,48-57,192-255",
 "editor.cursorSurroundingLines": 5,
 "chat.viewSessions.orientation": "stacked",
-"files.autoSave": "afterDelay"
+"files.autoSave": "afterDelay",
+"python.analysis.typeCheckingMode": "standard"
 }
