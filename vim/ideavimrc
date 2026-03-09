@@ -152,6 +152,8 @@ map <leader>uy <Action>(RiderUnitTestRepeatPreviousRunAction)
 
 " EDITOR TABS 
 nmap tp <Action>(PinActiveEditorTab)
+nmap <leader>x <Action>(CloseContent)
+nmap gx <Action>(CloseContent)
 
 " Github Copilot
 map <leader>ci <Action>(copilot.chat.inline) " doesn't seem to work just now
