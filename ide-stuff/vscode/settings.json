@@ -248,5 +248,7 @@
 "editor.cursorSurroundingLines": 5,
 "chat.viewSessions.orientation": "stacked",
 "files.autoSave": "afterDelay",
-"python.analysis.typeCheckingMode": "standard"
+"python.analysis.typeCheckingMode": "standard",
+"git.confirmSync": false,
+"git.autofetch": true
 }
