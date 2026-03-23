@@ -132,6 +132,27 @@
                         ]
                     },
                     {
+                        "description": "Ctrl+Shift+e to Cmd+Shift e (Export)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "mandatory": ["control", "shift"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "e",
+                                        "modifiers": ["command", "shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Ctrl+Shift+./, to Cmd+Shift equivalents",
                         "manipulators": [
                             {
@@ -1072,13 +1093,14 @@
                         ]
                     },
                     {
-                        "description": "(Alacritty Only) Ctrl+Shift+C/V to Cmd+C/V",
+                        "description": "(Alacritty/Rider Only) Ctrl+Shift+C/V to Cmd+C/V",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^org.alacritty$"
+                                            "^org.alacritty$",
+                                            "^com.jetbrains.rider$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1102,7 +1124,8 @@
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^org.alacritty$"
+                                            "^org.alacritty$",
+                                            "^com.jetbrains.rider$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -1460,7 +1483,7 @@
                         ]
                     },
                     {
-                        "description": "option + hjkl -> arrow keys (Disabled in Editors/Terminals)",
+                        "description": "option + hjkl -> arrow keys (Disabled in Editors/Terminals) - Includes M4 MacBook Keyboard",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1469,6 +1492,11 @@
                                             {
                                                 "is_keyboard": true,
                                                 "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "is_keyboard": true,
+                                                "product_id": 641,
                                                 "vendor_id": 1452
                                             }
                                         ],
@@ -1505,6 +1533,11 @@
                                                 "is_keyboard": true,
                                                 "product_id": 632,
                                                 "vendor_id": 1452
+                                            },
+                                            {
+                                                "is_keyboard": true,
+                                                "product_id": 641,
+                                                "vendor_id": 1452
                                             }
                                         ],
                                         "type": "device_if"
@@ -1540,6 +1573,11 @@
                                                 "is_keyboard": true,
                                                 "product_id": 632,
                                                 "vendor_id": 1452
+                                            },
+                                            {
+                                                "is_keyboard": true,
+                                                "product_id": 641,
+                                                "vendor_id": 1452
                                             }
                                         ],
                                         "type": "device_if"
@@ -1574,6 +1612,11 @@
                                             {
                                                 "is_keyboard": true,
                                                 "product_id": 632,
+                                                "vendor_id": 1452
+                                            },
+                                            {
+                                                "is_keyboard": true,
+                                                "product_id": 641,
                                                 "vendor_id": 1452
                                             }
                                         ],
@@ -1951,6 +1994,14 @@
                         "description": "F2 => Return (Rename)",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com.microsoft.VSCode$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "from": { "key_code": "f2" },
                                 "to": [{ "key_code": "return_or_enter" }],
                                 "type": "basic"
@@ -2294,7 +2345,9 @@
                         "product_id": 45091,
                         "vendor_id": 1133
                     },
-                    "ignore": false
+                    "ignore": false,
+                    "ignore_vendor_events": true,
+                    "manipulate_caps_lock_led": false
                 },
                 {
                     "identifiers": {
@@ -2317,6 +2370,52 @@
                     ]
                 },
                 {
+                    "fn_function_keys": [
+                        {
+                            "from": { "key_code": "f1" },
+                            "to": [{ "consumer_key_code": "display_brightness_decrement" }]
+                        },
+                        {
+                            "from": { "key_code": "f2" },
+                            "to": [{ "consumer_key_code": "display_brightness_increment" }]
+                        },
+                        {
+                            "from": { "key_code": "f3" },
+                            "to": [{ "apple_vendor_keyboard_key_code": "mission_control" }]
+                        },
+                        {
+                            "from": { "key_code": "f4" },
+                            "to": [{ "apple_vendor_keyboard_key_code": "spotlight" }]
+                        },
+                        {
+                            "from": { "key_code": "f5" },
+                            "to": [{ "consumer_key_code": "mute" }]
+                        },
+                        {
+                            "from": { "key_code": "f6" },
+                            "to": [{ "generic_desktop": "do_not_disturb" }]
+                        },
+                        {
+                            "from": { "key_code": "f7" },
+                            "to": [{ "consumer_key_code": "rewind" }]
+                        },
+                        {
+                            "from": { "key_code": "f8" },
+                            "to": [{ "consumer_key_code": "play_or_pause" }]
+                        },
+                        {
+                            "from": { "key_code": "f9" },
+                            "to": [{ "consumer_key_code": "fast_forward" }]
+                        },
+                        {
+                            "from": { "key_code": "f10" },
+                            "to": [{ "consumer_key_code": "volume_decrement" }]
+                        },
+                        {
+                            "from": { "key_code": "f11" },
+                            "to": [{ "consumer_key_code": "volume_increment" }]
+                        }
+                    ],
                     "identifiers": { "is_keyboard": true },
                     "simple_modifications": [
                         {
