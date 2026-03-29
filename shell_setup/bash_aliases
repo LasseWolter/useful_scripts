@@ -8,10 +8,10 @@ alias upup='sudo apt update -y && sudo apt upgrade'
 # GIT
 # git checkout using fzf
 gch() {
- git checkout "$(git branch | fzf| tr -d '[:space:]')"
+ git checkout "$(git branch | fzf | tr -d '[:space:]')"
 }
 gcha() {
- git checkout "$(git branch --all | fzf| tr -d '[:space:]')"
+ git checkout "$(git branch --all | fzf | cut -d'/' -f3-)"
 }
 alias gco='git checkout'
 alias gcop='git checkout main && git pull'
