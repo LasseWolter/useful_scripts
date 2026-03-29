@@ -132,6 +132,27 @@
                         ]
                     },
                     {
+                        "description": "Ctrl+Shift+e to Cmd+Shift e (Export)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "mandatory": ["control", "shift"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "e",
+                                        "modifiers": ["command", "shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Ctrl+Shift+./, to Cmd+Shift equivalents",
                         "manipulators": [
                             {
@@ -1460,107 +1481,19 @@
                         ]
                     },
                     {
-                        "description": "option + hjkl -> arrow keys (Disabled in Editors/Terminals)",
+                        "description": "fn + hjkl -> arrow keys (Built-in Keyboard Only)",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "identifiers": [
-                                            {
-                                                "is_keyboard": true,
-                                                "product_id": 632,
-                                                "vendor_id": 1452
-                                            }
-                                        ],
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
                                         "type": "device_if"
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.jetbrains\\.rider$",
-                                            "^com\\.jetbrains\\.",
-                                            "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
-                                            "^com\\.visualstudio\\.code$",
-                                            "^com\\.sublimetext\\."
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "up_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "is_keyboard": true,
-                                                "product_id": 632,
-                                                "vendor_id": 1452
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.jetbrains\\.rider$",
-                                            "^com\\.jetbrains\\.",
-                                            "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
-                                            "^com\\.visualstudio\\.code$",
-                                            "^com\\.sublimetext\\."
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": ["left_option"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "down_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "is_keyboard": true,
-                                                "product_id": 632,
-                                                "vendor_id": 1452
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.jetbrains\\.rider$",
-                                            "^com\\.jetbrains\\.",
-                                            "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
-                                            "^com\\.visualstudio\\.code$",
-                                            "^com\\.sublimetext\\."
-                                        ],
-                                        "type": "frontmost_application_unless"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
-                                        "mandatory": ["left_option"],
+                                        "mandatory": ["fn"],
                                         "optional": ["any"]
                                     }
                                 },
@@ -1570,32 +1503,48 @@
                             {
                                 "conditions": [
                                     {
-                                        "identifiers": [
-                                            {
-                                                "is_keyboard": true,
-                                                "product_id": 632,
-                                                "vendor_id": 1452
-                                            }
-                                        ],
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
                                         "type": "device_if"
-                                    },
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "down_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
                                     {
-                                        "bundle_identifiers": [
-                                            "^com\\.jetbrains\\.rider$",
-                                            "^com\\.jetbrains\\.",
-                                            "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^io\\.alacritty$",
-                                            "^com\\.visualstudio\\.code$",
-                                            "^com\\.sublimetext\\."
-                                        ],
-                                        "type": "frontmost_application_unless"
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "up_arrow" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
+                                        "type": "device_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
-                                        "mandatory": ["left_option"],
+                                        "mandatory": ["fn"],
                                         "optional": ["any"]
                                     }
                                 },
@@ -1605,79 +1554,12 @@
                         ]
                     },
                     {
-                        "description": "ctrl + h/l -> left/right keys (internal keyboard only)",
+                        "description": "ctrl + shift + h/l -> highlight word (Built-in Keyboard Only)",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "identifiers": [
-                                            {
-                                                "is_keyboard": true,
-                                                "product_id": 632,
-                                                "vendor_id": 1452
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": ["left_control"],
-                                        "optional": ["shift"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": []
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "is_keyboard": true,
-                                                "product_id": 632,
-                                                "vendor_id": 1452
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": ["left_control"],
-                                        "optional": ["shift"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "right_arrow",
-                                        "modifiers": []
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "ctrl + shift + h/l -> left_option + shift + left/right (highlight word, internal keyboard only)",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "is_keyboard": true,
-                                                "product_id": 632,
-                                                "vendor_id": 1452
-                                            }
-                                        ],
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
                                         "type": "device_if"
                                     }
                                 ],
@@ -1699,13 +1581,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "identifiers": [
-                                            {
-                                                "is_keyboard": true,
-                                                "product_id": 632,
-                                                "vendor_id": 1452
-                                            }
-                                        ],
+                                        "identifiers": [{ "is_built_in_keyboard": true }],
                                         "type": "device_if"
                                     }
                                 ],
@@ -1951,6 +1827,14 @@
                         "description": "F2 => Return (Rename)",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com.microsoft.VSCode$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "from": { "key_code": "f2" },
                                 "to": [{ "key_code": "return_or_enter" }],
                                 "type": "basic"
@@ -2294,7 +2178,9 @@
                         "product_id": 45091,
                         "vendor_id": 1133
                     },
-                    "ignore": false
+                    "ignore": false,
+                    "ignore_vendor_events": true,
+                    "manipulate_caps_lock_led": false
                 },
                 {
                     "identifiers": {
@@ -2317,6 +2203,52 @@
                     ]
                 },
                 {
+                    "fn_function_keys": [
+                        {
+                            "from": { "key_code": "f1" },
+                            "to": [{ "consumer_key_code": "display_brightness_decrement" }]
+                        },
+                        {
+                            "from": { "key_code": "f2" },
+                            "to": [{ "consumer_key_code": "display_brightness_increment" }]
+                        },
+                        {
+                            "from": { "key_code": "f3" },
+                            "to": [{ "apple_vendor_keyboard_key_code": "mission_control" }]
+                        },
+                        {
+                            "from": { "key_code": "f4" },
+                            "to": [{ "apple_vendor_keyboard_key_code": "spotlight" }]
+                        },
+                        {
+                            "from": { "key_code": "f5" },
+                            "to": [{ "consumer_key_code": "mute" }]
+                        },
+                        {
+                            "from": { "key_code": "f6" },
+                            "to": [{ "generic_desktop": "do_not_disturb" }]
+                        },
+                        {
+                            "from": { "key_code": "f7" },
+                            "to": [{ "consumer_key_code": "rewind" }]
+                        },
+                        {
+                            "from": { "key_code": "f8" },
+                            "to": [{ "consumer_key_code": "play_or_pause" }]
+                        },
+                        {
+                            "from": { "key_code": "f9" },
+                            "to": [{ "consumer_key_code": "fast_forward" }]
+                        },
+                        {
+                            "from": { "key_code": "f10" },
+                            "to": [{ "consumer_key_code": "volume_decrement" }]
+                        },
+                        {
+                            "from": { "key_code": "f11" },
+                            "to": [{ "consumer_key_code": "volume_increment" }]
+                        }
+                    ],
                     "identifiers": { "is_keyboard": true },
                     "simple_modifications": [
                         {
@@ -2338,6 +2270,14 @@
                         {
                             "from": { "key_code": "left_option" },
                             "to": [{ "key_code": "left_command" }]
+                        },
+                        {
+                            "from": { "key_code": "right_command" },
+                            "to": [{ "key_code": "right_option" }]
+                        },
+                        {
+                            "from": { "key_code": "right_option" },
+                            "to": [{ "key_code": "right_command" }]
                         }
                     ]
                 }
