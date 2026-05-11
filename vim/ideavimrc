@@ -34,7 +34,7 @@ nmap <esc> :noh<CR><Action>(EditorToggleColumnMode)<Action>(EditorToggleColumnMo
 " Need to define this here because the .vimrc uses the overwindow search
 " which is currently not supported by the idea-plugin
 " see: https://github.com/AlexPl292/IdeaVim-EasyMotion#supported-commands
-nmap s <Plug>(easymotion-bd-f)
+" nmap s <Plug>(easymotion-bd-f)
 
 " Not needed when using relative line numbers
 " nmap <Leader>j <Plug>(easymotion-j)
@@ -158,6 +158,8 @@ nmap gx <Action>(CloseContent)
 
 " Github Copilot
 map <leader>ci <Action>(copilot.chat.inline) " doesn't seem to work just now
+" Unccomment depending on the AI you want to use
+" map <leader>cc <Action>(ActivateAIAssistantToolWindow)
 map <leader>cc <Action>(copilot.chat.show)
 map <leader>co <Action>(copilot.openCopilot)
 map <leader>cs <Action>(copilot.openStatus)
