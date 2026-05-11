@@ -47,7 +47,7 @@ size = 14
 
 [terminal.shell]
 program = "/bin/zsh" # or /bin/bash
-args = ["--login", "-c", "source ~/.zshrc && (tmux attach || tmux)"]
+args = ["--login", "-c", "source ~/.zshrc && (tmux)"]
 
 [window]
 title = "tmux"
