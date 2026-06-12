@@ -82,5 +82,9 @@ vnoremap < < gv
 " Toggle current fold (zm is easier to hit and close to c-m which was my IDE mapping)
 nmap zm za
 
+" Replace word under cursor/selected word in whole file
+nnoremap <leader>rp :%s/<C-r><C-w>//g<Left><Left>
+xnoremap <leader>rp y:%s/<C-r>"//g<Left><Left>
+
 " Uncomment to treat _ as a word separator so you can easily jump inside snake case variables
 " set iskeyword-=_
