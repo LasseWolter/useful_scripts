@@ -110,8 +110,8 @@ kenv() {
 
 alias klog='kubectl logs --timestamps'
 koward() {
-    NAMESPACE="${2:-prod}"
-    PORT="${3:-5000}"
+    NAMESPACE="${2:-core-services}"
+    PORT="${3:-8080}"
     CMD="kubectl port-forward deployment/$1 8080:$PORT -n $NAMESPACE"
     echo "$CMD\n"
     (sleep 1; zen http://localhost:8080/swagger)&
