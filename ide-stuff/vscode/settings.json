@@ -6,6 +6,7 @@
   // VSCode Vim – mirroring Rider/IdeaVim + .vimrc-base setup
   // =========================================================
 
+
   // ---------- Core vim options (mirrors .vimrc-base) ----------
   "vim.enable": true,
   "vim.leader": "<space>",
@@ -16,7 +17,7 @@
   "vim.scrolloff": 5,
   "vim.visualBell": true,
   "vim.useCtrlKeys": true,
-  "vim.iskeyword": "@,48-57,192-255",
+  "vim.iskeyword": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
 
   // Explicitly route these Ctrl keys to vim instead of VSCode
   "vim.handleKeys": {
@@ -119,7 +120,7 @@
 
     // LSP
     { "before": ["<leader>", "r", "n"], "commands": ["editor.action.rename"]             },
-    { "before": ["<leader>", "a"],      "commands": ["workbench.action.showCommands"]    },
+    { "before": ["<leader>", "a", "a"],      "commands": ["workbench.action.showCommands"]    },
     { "before": ["<leader>", "f"],      "commands": ["editor.action.formatDocument"]     },
     { "before": ["g", "i"],             "commands": ["editor.action.goToImplementation"] },
     { "before": ["g", "r"],             "commands": ["editor.action.goToReferences"]     },
@@ -168,6 +169,7 @@
     { "before": ["<leader>", "g", "h", "f"], "commands": ["gitlens.showFileHistoryView"]  },
     { "before": ["<leader>", "g", "h", "s"], "commands": ["gitlens.showLineHistoryView"]  },
     { "before": ["<leader>", "h", "r"],      "commands": ["git.revertSelectedRanges"]     },
+    { "before": ["<leader>", "a", "l"], "commands": ["github.copyVscodeDevLink"] },
 
     // Search / navigation
     { "before": ["<leader>", "s", "f"], "commands": ["workbench.action.quickOpen"]      },
@@ -191,6 +193,7 @@
 
     // Explorer 
     { "before": ["<leader>", "e"], "commands": ["workbench.files.action.showActiveFileInExplorer"] },
+
 
     // Copilot
     { "before": ["<leader>", "c", "i"], "commands": ["inlineChat.start"]              },
@@ -219,11 +222,20 @@
     { "before": ["<M-.>"], "after": [">", "g", "v"] },
     { "before": ["<M-,>"], "after": ["<", "g", "v"] },
 
+    // Git
+    { "before": ["<leader>", "a", "l"], "commands": ["github.copyVscodeDevLink"] },
+
     // Move lines
     { "before": ["J"],     "commands": ["editor.action.moveLinesDownAction"] },
     { "before": ["K"],     "commands": ["editor.action.moveLinesUpAction"]   },
     { "before": ["<M-j>"], "commands": ["editor.action.moveLinesDownAction"] },
     { "before": ["<M-k>"], "commands": ["editor.action.moveLinesUpAction"]   },
+
+
+    // Copilot
+    { "before": ["<leader>", "c", "i"], "commands": ["inlineChat.start"]              },
+    { "before": ["<leader>", "c", "c"], "commands": ["workbench.action.chat.open"]    },
+    { "before": ["<leader>", "c", "n"], "commands": ["workbench.action.chat.newChat"] },
 
     // Increment
     { "before": ["<C-m>"],  "after": ["<C-a>"] },
@@ -244,11 +256,58 @@
   "vim.insertModeKeyBindings": [
     { "before": ["<C-v>"], "after": ["<C-r>", "+"] }
 ],
-"editor.wordSeparators": "@,48-57,192-255",
+"editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
 "editor.cursorSurroundingLines": 5,
 "chat.viewSessions.orientation": "stacked",
 "files.autoSave": "afterDelay",
 "python.analysis.typeCheckingMode": "standard",
 "git.confirmSync": false,
-"git.autofetch": true
+"git.autofetch": true,
+"editor.mouseWheelZoom": true,
+"mypy-type-checker.cwd": " ${nearestConfig}",
+"workbench.editor.mouseBackForwardToNavigate": false,
+"chat.mcp.gallery.enabled": true,
+"mssql.connectionGroups": [
+  {
+    "name": "ROOT",
+    "id": "ROOT"
+  }
+],
+"mssql.connections": [
+  {
+    "server": "tcp:sql-agri-prod-ukw.database.windows.net,1433",
+    "port": 1433,
+    "database": "prod-towerdb",
+    "user": "lasse.wolter@intelligentgrowthsolutions.com",
+    "authenticationType": "ActiveDirectoryDefault",
+    "encrypt": "true",
+    "trustServerCertificate": false,
+    "connectTimeout": 30,
+    "commandTimeout": 30,
+    "connectRetryCount": 1,
+    "connectRetryInterval": 10,
+    "applicationName": "vscode-mssql",
+    "profileName": "tower-db",
+    "groupId": "ROOT",
+    "id": "6fda986d-ea17-48e3-8652-6cd7963be273",
+    "profileSource": 0,
+    "password": ""
+  }
+],
+"vim.vimrc.path": "$HOME/.vimrc-base",
+"vim.vimrc.enable": true,
+"editor.wordWrap": "on",
+"gitlens.views.scm.grouped.views": {
+  "commits": true,
+  "branches": true,
+  "remotes": true,
+  "stashes": true,
+  "tags": true,
+  "worktrees": true,
+  "contributors": true,
+  "fileHistory": false,
+  "repositories": true,
+  "searchAndCompare": true,
+  "launchpad": false
+}
 }
