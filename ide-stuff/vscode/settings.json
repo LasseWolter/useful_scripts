@@ -169,7 +169,7 @@
     { "before": ["<leader>", "g", "h", "f"], "commands": ["gitlens.showFileHistoryView"]  },
     { "before": ["<leader>", "g", "h", "s"], "commands": ["gitlens.showLineHistoryView"]  },
     { "before": ["<leader>", "h", "r"],      "commands": ["git.revertSelectedRanges"]     },
-    { "before": ["<leader>", "a", "l"], "commands": ["github.copyVscodeDevLink"] },
+    { "before": ["<leader>", "a", "l"], "commands": ["gitlens.copyRemoteFileUrlToClipboard"] },
 
     // Search / navigation
     { "before": ["<leader>", "s", "f"], "commands": ["workbench.action.quickOpen"]      },
@@ -223,7 +223,7 @@
     { "before": ["<M-,>"], "after": ["<", "g", "v"] },
 
     // Git
-    { "before": ["<leader>", "a", "l"], "commands": ["github.copyVscodeDevLink"] },
+    { "before": ["<leader>", "a", "l"], "commands": ["gitlens.copyRemoteFileUrlToClipboard"] },
 
     // Move lines
     { "before": ["J"],     "commands": ["editor.action.moveLinesDownAction"] },
@@ -309,5 +309,13 @@
   "repositories": true,
   "searchAndCompare": true,
   "launchpad": false
-}
+},
+"yaml.disableSchemaDetection": [
+  "**/.github/workflows/*.yml",
+  "**/.github/workflows/*.yaml",
+  "**/.gitea/workflows/*.yml",
+  "**/.gitea/workflows/*.yaml",
+  "**/.forgejo/workflows/*.yml",
+  "**/.forgejo/workflows/*.yaml"
+]
 }
