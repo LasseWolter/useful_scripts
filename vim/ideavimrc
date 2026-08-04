@@ -24,6 +24,14 @@ let NERDTreeShowHidden=1    " show hidden files (dot files)
 let NERDTreeQuitOnOpen = 1  " close nerdtree on opening a file
 "<<<<<Nerd tree settings----------------------
 
+" Multi caret vim plugin
+nmap <M-n> <Plug>NextWholeOccurrence
+vmap <M-n> <Plug>NextWholeOccurrence
+nmap g<M-n> <Plug>AllOccurrences
+vmap g<M-n> <Plug>AllOccurrences
+vmap <M-x> <Plug>SkipOccurrence
+vmap <M-p> <Plug>RemoveOccurrence
+
 " Multi caret based on lines (not words/matches)
 nmap <M-j> <Action>(EditorCloneCaretBelow)
 nmap <M-k> <Action>(EditorCloneCaretAbove)
