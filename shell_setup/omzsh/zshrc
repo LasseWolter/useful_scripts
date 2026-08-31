@@ -31,6 +31,12 @@ fi
 # Prevent gh cli from using a pager for commands like 'gh issue list'
 export GH_PAGER=
 
+# you-should-use config
+export YSU_MESSAGE_FORMAT="$(tput setaf 3)Just use $(tput setaf 1)%alias$(tput setaf 3) mate...$(tput sgr0) %alias_type"
+# Ignore for you-should-use for following commands
+# - g/gp: added by zsh git plugin but not used in my base_aliases for it which means it would print the warning for things like `gl`
+export YSU_IGNORED_ALIASES=("g" "gp")
+
 # .NET
 #export DOTNET_ROOT=$HOME/.dotnet # for local install
 export DOTNET_ROOT="/usr/local/share/dotnet" # for system wide install
@@ -116,6 +122,7 @@ plugins=(
   zsh-autosuggestions
   fluxcd
   helm
+  you-should-use
 )
 
 source $ZSH/oh-my-zsh.sh
