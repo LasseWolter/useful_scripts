@@ -32,7 +32,7 @@ fi
 export GH_PAGER=
 
 # you-should-use config
-export YSU_MESSAGE_FORMAT="$(tput setaf 3)Just use $(tput setaf 1)%alias$(tput setaf 3) mate...$(tput sgr0) %alias_type"
+export YSU_MESSAGE_FORMAT="$(tput setaf 3)Just use $(tput setaf 1)%alias$(tput setaf 3) mate...$(tput sgr0)"
 # Ignore for you-should-use for following commands
 # - g/gp: added by zsh git plugin but not used in my base_aliases for it which means it would print the warning for things like `gl`
 export YSU_IGNORED_ALIASES=("g" "gp")
