@@ -40,6 +40,7 @@ export YSU_IGNORED_ALIASES=("g" "gp")
 # .NET
 #export DOTNET_ROOT=$HOME/.dotnet # for local install
 export DOTNET_ROOT="/usr/local/share/dotnet" # for system wide install
+ASPIRE_CLI_TELEMETRY_OPTOUT=1
 
 # Use nvim for  command editing in bash (e.g. when using fc or <C-x><C-e>)
 export EDITOR=nvim
@@ -151,3 +152,6 @@ eval "$(zoxide init --cmd cd zsh)"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export LS_COLORS="$LS_COLORS:di=01;34" # Example: bold blue directories
+
+# Added by codebase-memory-mcp install
+export PATH="/Users/lasse/.local/bin:$PATH"
