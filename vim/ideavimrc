@@ -9,6 +9,8 @@ vnoremap <M-,> < gv
 nnoremap <M-.> >>
 vnoremap <M-.> > gv
 
+imap jk <Esc>
+
 " Vim Plugins
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
@@ -146,6 +148,8 @@ map <leader>gp <Action>(ActivatePullRequestsToolWindow)
 map <leader>gh <Action>(Vcs.ShowTabbedFileHistory)
 map <leader>ghf <Action>(Vcs.ShowTabbedFileHistory)
 map <leader>ghs <Action>(Vcs.ShowHistoryForBlock)
+nmap <leader>gl <Action>(GitHub.Copy.Link)
+vmap <leader>gl <Action>(GitHub.Copy.Link)
 
 " (h)unk (r)eset
 nmap <leader>hr <Action>(Vcs.RollbackChangedLines)
@@ -168,7 +172,7 @@ nmap gx <Action>(CloseContent)
 " Github Copilot
 map <leader>ci <Action>(copilot.chat.inline) " doesn't seem to work just now
 " Unccomment depending on the AI you want to use
-" map <leader>cc <Action>(ActivateAIAssistantToolWindow)
+map <leader>cj <Action>(Activateair.threadsToolWindow)
 map <leader>cc <Action>(copilot.chat.show)
 map <leader>co <Action>(copilot.openCopilot)
 map <leader>cs <Action>(copilot.openStatus)
